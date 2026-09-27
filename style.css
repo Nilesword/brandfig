@@ -69,6 +69,10 @@ h2 { font-size: clamp(30px, 4.5vw, 44px); line-height: 1.1; letter-spacing: -.03
 }
 
 /* Pricing */
+.billing { display: inline-flex; gap: 4px; padding: 4px; margin: 0 0 24px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.billing button { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border: 0; border-radius: 9px; background: none; color: var(--muted); font: 600 14px/1 inherit; font-family: inherit; cursor: pointer; }
+.billing button.on { background: var(--surface-2); color: var(--text); }
+.billing .save { padding: 3px 7px; border-radius: 6px; background: rgba(19, 63, 255, .22); color: var(--brand-light); font-size: 11px; }
 .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; }
 .plan.featured { border-color: rgba(19, 63, 255, .7); background: linear-gradient(180deg, rgba(19, 63, 255, .14), var(--surface) 55%); }

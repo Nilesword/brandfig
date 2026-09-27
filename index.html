@@ -123,7 +123,11 @@
       <div class="wrap">
         <span class="eyebrow">Pricing</span>
         <h2>Start free, go Pro when you need it</h2>
-        <p class="section-lead">Brandfig is free to install from Figma Community. Pro unlocks the full toolkit for a small monthly subscription. Cancel anytime.</p>
+        <p class="section-lead">Brandfig is free to install from Figma Community. Pro unlocks the full toolkit with a monthly or yearly subscription. Cancel anytime.</p>
+        <div class="billing" role="group" aria-label="Billing period">
+          <button type="button" class="on" data-billing="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" data-billing="yearly" aria-pressed="false">Yearly <span class="save">2 months free</span></button>
+        </div>
         <div class="plans">
           <div class="plan">
             <h3>Free</h3>
@@ -139,8 +143,8 @@
           </div>
           <div class="plan featured">
             <h3>Pro</h3>
-            <div class="price">$12 <small>/ month</small></div>
-            <p class="note">Billed monthly · cancel anytime · all updates included</p>
+            <div class="price" data-monthly="$12 <small>/ month</small>" data-yearly="$96 <small>/ year</small>">$12 <small>/ month</small></div>
+            <p class="note" data-monthly="Billed monthly · cancel anytime · all updates included" data-yearly="$8 / month, billed yearly · cancel anytime · all updates included">Billed monthly · cancel anytime · all updates included</p>
             <ul>
               <li>Everything in Free</li>
               <li>More and All line levels, circles and ovals with sizes</li>
@@ -149,8 +153,8 @@
               <li>Layout grids and brand formats</li>
               <li>Save colors and type as styles and variables</li>
             </ul>
-            <!-- Replace # with the Dodo Payments checkout link once the product is created -->
-            <a class="btn primary" href="#" data-checkout>Buy Pro</a>
+            <!-- Replace the two # with the Dodo Payments checkout links (monthly and yearly products) -->
+            <a class="btn primary" href="#" data-checkout data-monthly-href="#" data-yearly-href="#">Get Pro</a>
           </div>
         </div>
       </div>
@@ -167,7 +171,7 @@
           </details>
           <details>
             <summary>How does the subscription work?</summary>
-            <p>Pro is billed monthly and renews automatically. You can cancel anytime from the link in your receipt email; Pro keeps working until the end of the month you’ve paid for.</p>
+            <p>Pro is billed monthly ($12) or yearly ($96, two months free) and renews automatically. You can cancel anytime from the link in your receipt email; Pro keeps working until the end of the period you’ve paid for.</p>
           </details>
           <details>
             <summary>How many computers can I use it on?</summary>
@@ -201,5 +205,15 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Monthly / yearly switch: swaps the Pro price, note and checkout link
+    document.querySelectorAll("[data-billing]").forEach(btn => btn.addEventListener("click", () => {
+      const period = btn.dataset.billing;
+      document.querySelectorAll("[data-billing]").forEach(b => { b.classList.toggle("on", b === btn); b.setAttribute("aria-pressed", b === btn); });
+      document.querySelectorAll("[data-monthly][data-yearly]").forEach(el => { el.innerHTML = el.dataset[period]; });
+      const cta = document.querySelector("[data-checkout]");
+      cta.href = cta.dataset[period + "Href"];
+    }));
+  </script>
 </body>
 </html>
