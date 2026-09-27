@@ -12,8 +12,8 @@
   <link rel="icon" href="img/mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,600..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 <body>
   <header class="nav">
@@ -35,7 +35,7 @@
       <div class="wrap">
         <div class="copy">
           <span class="mono eyebrow">Figma plugin for brand identity</span>
-          <h1>Brand guidelines in <span class="measure">a few clicks</span></h1>
+          <h1><span class="nowrap">Brand guidelines</span> in <span class="select">a few clicks<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i><span class="size" aria-hidden="true"></span></span></h1>
           <p class="lead">Construction drafts, clear space, color specs, type specimens and layout grids, generated from your own artwork, right inside Figma.</p>
           <div class="cta">
             <a class="btn primary" href="#pricing">Get Brandfig</a>
@@ -50,9 +50,6 @@
         <div class="stage" aria-hidden="true">
           <img class="sample" src="img/samples/draft.png" alt="" width="800" height="800" />
           <img class="panel" src="img/panels/draft.png" alt="" width="760" height="1320" />
-          <span class="reg tl"></span><span class="reg br"></span>
-          <span class="tag-note n1">R 23 ×6</span>
-          <span class="tag-note n2">33.3°</span>
         </div>
       </div>
     </section>
@@ -277,8 +274,8 @@
     <div class="final">
       <div class="wrap">
         <div class="box reveal">
-          <h2>Draw your brand system today</h2>
-          <p>Install Brandfig free from Figma Community and make your first construction draft in under a minute.</p>
+          <h2>Guidelines in minutes, not days</h2>
+          <p>Install Brandfig free from Figma Community. Your first construction draft takes less than a minute.</p>
           <div class="cta">
             <a class="btn light" href="https://www.figma.com/community" rel="noopener">Install free</a>
             <a class="btn ghost" href="#pricing">See Pro</a>
@@ -314,6 +311,11 @@
 
   <script>
     document.documentElement.classList.remove('no-js');
+
+    // Selection size badge shows the highlight's real width × height, like Figma
+    const sel = document.querySelector('h1 .select');
+    const sizeSel = () => { const r = sel.getBoundingClientRect(); sel.querySelector('.size').textContent = Math.round(r.width) + ' × ' + Math.round(r.height); };
+    sizeSel(); addEventListener('resize', sizeSel); document.fonts && document.fonts.ready.then(sizeSel);
 
     // Nav gets a background once the page scrolls
     const nav = document.querySelector('.nav');
