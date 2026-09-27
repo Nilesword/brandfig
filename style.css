@@ -70,7 +70,7 @@ h2 { font-size: clamp(30px, 4.5vw, 44px); line-height: 1.1; letter-spacing: -.03
 
 /* Pricing */
 .billing { display: inline-flex; gap: 4px; padding: 4px; margin: 0 0 24px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
-.billing button { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border: 0; border-radius: 9px; background: none; color: var(--muted); font: 600 14px/1 inherit; font-family: inherit; cursor: pointer; }
+.billing button { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border: 0; border-radius: 9px; background: none; color: var(--muted); font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1; cursor: pointer; }
 .billing button.on { background: var(--surface-2); color: var(--text); }
 .billing .save { padding: 3px 7px; border-radius: 6px; background: rgba(19, 63, 255, .22); color: var(--brand-light); font-size: 11px; }
 .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -80,7 +80,7 @@ h2 { font-size: clamp(30px, 4.5vw, 44px); line-height: 1.1; letter-spacing: -.03
 .price { font-size: 48px; font-weight: 700; letter-spacing: -.03em; margin: 12px 0 2px; }
 .price small { font-size: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
 .plan .note { color: var(--faint); font-size: 14px; margin: 0 0 24px; }
-.plan ul { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; flex: 1; }
+.plan ul { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; flex: 1; align-content: start; }
 .plan li { padding-left: 26px; position: relative; color: var(--muted); }
 .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--brand-light); font-weight: 700; }
 @media (max-width: 720px) { .plans { grid-template-columns: 1fr; } }
