@@ -77,7 +77,9 @@ img { display: block; max-width: 100%; height: auto; }
 .hero .wrap { display: grid; grid-template-columns: 1.02fr .98fr; gap: 64px; align-items: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; }
 .eyebrow::before { content: ""; width: 8px; height: 8px; border: 1.5px solid var(--draft); transform: rotate(45deg); }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -.04em; margin: 0; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -.04em; margin: 0; text-wrap: balance; }
+/* No orphaned last words in running text */
+p, li, .answer { text-wrap: pretty; }
 h1 { font-size: clamp(42px, 5.3vw, 72px); line-height: 1.02; margin: 22px 0 24px; }
 .nowrap { white-space: nowrap; }
 /* "a few clicks" framed like a text layer selected in Figma */
