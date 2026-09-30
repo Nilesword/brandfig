@@ -19,7 +19,11 @@
   --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }   /* no blue flash when tapping on phones */
+/* Tapping controls shouldn't select their text */
+button, .btn, [role="tab"], summary, nav a, header a { -webkit-user-select: none; user-select: none; }
+:focus:not(:focus-visible) { outline: none; }
+::selection { background: rgba(19, 63, 255, .55); color: #fff; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body {
   margin: 0; background: var(--ink); color: var(--text);
