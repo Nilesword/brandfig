@@ -151,7 +151,12 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .tabs button[aria-selected="true"] { background: var(--card-2); color: var(--text); box-shadow: inset 0 0 0 1px var(--line-2); }
 .tabs button[aria-selected="true"] svg { color: var(--draft); }
 
-.showcase { margin-top: 28px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(160deg, rgba(19,63,255,.10), rgba(255,255,255,.015) 40%); overflow: hidden; }
+.showcase { margin-top: 28px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(160deg, rgba(19,63,255,.10), rgba(255,255,255,.015) 40%); overflow: hidden; position: relative; isolation: isolate; }
+/* Dot grid like the How it works canvases, strongest behind the product shots, fading out under the text */
+.showcase::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.2px) 0 0 / 16px 16px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 15%, #000 60%); mask-image: linear-gradient(90deg, transparent 15%, #000 60%); }
+@media (max-width: 960px) { .showcase::before { -webkit-mask-image: linear-gradient(180deg, transparent 35%, #000 70%); mask-image: linear-gradient(180deg, transparent 35%, #000 70%); } }
 .feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; padding: 56px; }
 .feature[hidden] { display: none; }
 .feature .mono { color: var(--draft); }
@@ -177,10 +182,10 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 }
 
 /* ---------- How it works ---------- */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.step { position: relative; display: flex; flex-direction: column; padding: 8px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 12px; }
+.step { position: relative; display: flex; flex-direction: column; padding: 10px; border: 1px solid var(--line); border-radius: 24px; background: var(--card); }
 /* Illustration: a little Figma canvas with a faint drafting grid */
-.step .vis { position: relative; height: 216px; display: grid; place-items: center; overflow: hidden; border-radius: 15px; border: 1px solid var(--line);
+.step .vis { position: relative; height: 264px; display: grid; place-items: center; overflow: hidden; border-radius: 16px; border: 1px solid var(--line);
   background: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.2px) 0 0 / 16px 16px, #0d0d11; }   /* dot grid, like a design canvas */
 .step .vis > svg { width: 100%; height: 100%; }
 .step .vis .tag { font: 500 9.5px var(--mono); fill: #fff; }
@@ -191,7 +196,7 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .step .vis .layer.on { fill: #fff; font-weight: 600; }
 .step .vis .layer.head { font: 600 9px var(--mono); letter-spacing: .14em; fill: rgba(244,244,241,.4); }
 /* Step 2: a slice of the plugin panel */
-.mini-panel { transform: scale(.88); width: 214px; padding: 10px; border-radius: 12px; background: #17171c; border: 1px solid var(--line-2); box-shadow: 0 20px 40px -18px rgba(0,0,0,.8); }
+.mini-panel { transform: scale(.95); width: 214px; padding: 10px; border-radius: 12px; background: #17171c; border: 1px solid var(--line-2); box-shadow: 0 20px 40px -18px rgba(0,0,0,.8); }
 .sw-row { display: flex; align-items: center; gap: 9px; height: 30px; padding: 0 4px; font: 500 12.5px var(--sans); color: var(--text); }
 .sw-row svg { width: 15px; height: 15px; fill: none; stroke: var(--draft); stroke-width: 1.8; stroke-linecap: round; }
 .sw-row span { flex: 1; }
@@ -200,10 +205,10 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .sw-row i.on { background: #0d99ff; }
 .sw-row i.on::after { left: 13px; }
 .mini-btn { margin-top: 8px; height: 30px; display: grid; place-items: center; border-radius: 7px; background: #0d99ff; color: #fff; font: 600 12px var(--sans); }
-.step .txt { padding: 22px 18px 18px; }
+.step .txt { padding: 28px 22px 26px; }
 .step .num { margin-right: 10px; font: 500 13px/1 var(--mono); color: var(--draft); vertical-align: 3px; }
-.step h3 { font-size: 21px; letter-spacing: -.02em; margin: 0 0 8px; }
-.step p { margin: 0; color: var(--muted); font-size: 15px; }
+.step h3 { font-size: 22px; letter-spacing: -.02em; margin: 0 0 12px; }
+.step p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
 @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- Pricing ---------- */
