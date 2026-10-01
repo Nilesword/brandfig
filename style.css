@@ -179,8 +179,6 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 /* ---------- How it works ---------- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .step { position: relative; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
-.step::after { /* construction tick on the top edge */
-  content: ""; position: absolute; left: 28px; top: -1px; width: 40px; height: 2px; background: var(--draft); }
 /* Illustration: a little Figma canvas with a faint drafting grid */
 .step .vis { position: relative; height: 220px; display: grid; place-items: center; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--line);
   background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 22px 22px, #0e0e12; }
@@ -206,10 +204,7 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .step .num { font: 500 13px/1 var(--mono); color: var(--draft); }
 .step h3 { font-size: 22px; letter-spacing: -.02em; margin: 14px 0 8px; }
 .step p { margin: 0; color: var(--muted); font-size: 15px; }
-/* Arrow between steps: one flow, left to right (top to bottom on phones) */
-.step:not(:last-child)::before { content: "\2192"; position: absolute; z-index: 2; right: -24px; top: 96px; width: 28px; height: 28px; display: grid; place-items: center;
-  border-radius: 50%; background: var(--ink); border: 1px solid var(--line-2); color: var(--draft); font: 600 14px/1 var(--sans); }
-@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } .step:not(:last-child)::before { content: "\2193"; right: auto; left: 50%; top: auto; bottom: -24px; margin-left: -14px; } }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- Pricing ---------- */
 .billing { display: inline-flex; gap: 4px; padding: 5px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); margin: 0 auto 36px; }
