@@ -75,11 +75,6 @@ img { display: block; max-width: 100%; height: auto; }
   background-size: 48px 48px; background-position: center top;
   mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
 }
-.hero::after { /* soft brand glow */
-  content: ""; position: absolute; z-index: -1; pointer-events: none;
-  width: 900px; height: 900px; right: -220px; top: -260px;
-  background: radial-gradient(closest-side, rgba(19,63,255,.38), transparent 70%);
-}
 .hero .wrap { display: grid; grid-template-columns: 1.02fr .98fr; gap: 64px; align-items: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; }
 .eyebrow::before { content: ""; width: 8px; height: 8px; border: 1.5px solid var(--draft); transform: rotate(45deg); }
@@ -219,7 +214,7 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .center-row { display: flex; justify-content: center; }
 .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 920px; margin: 0 auto; }
 .plan { position: relative; display: flex; flex-direction: column; padding: 36px; border-radius: 24px; border: 1px solid var(--line); background: var(--card); }
-.plan.featured { border-color: rgba(19,63,255,.65); background: radial-gradient(120% 70% at 100% 0%, rgba(19,63,255,.22), transparent 60%), var(--card); box-shadow: 0 30px 80px -40px rgba(19,63,255,.6); }
+.plan.featured { border-color: rgba(19,63,255,.65); background: var(--card); }
 .plan .top { display: flex; align-items: center; justify-content: space-between; min-height: 26px; }
 .plan h3 { font-size: 22px; letter-spacing: -.02em; }
 .plan .badge { font: 600 10.5px/1 var(--mono); letter-spacing: .06em; padding: 6px 9px; border-radius: 7px; background: var(--brand); color: #fff; }
@@ -258,7 +253,7 @@ h2 { font-size: clamp(34px, 4.4vw, 54px); line-height: 1.02; margin: 16px 0 16px
 .final { padding: 0 0 120px; }
 .final .box {
   position: relative; overflow: hidden; padding: 72px 56px; border-radius: 32px; text-align: center;
-  background: radial-gradient(90% 120% at 50% 0%, #2a50ff 0%, var(--brand) 45%, #0b2be0 100%);
+  background: var(--brand);
 }
 .final .box::before { /* construction grid inside the blue card */
   content: ""; position: absolute; inset: 0; pointer-events: none;
