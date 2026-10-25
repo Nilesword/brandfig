@@ -1,0 +1,4 @@
+# GitHub Pages: keep working notes and the page generator off the public site
+exclude:
+  - notes
+  - build.py

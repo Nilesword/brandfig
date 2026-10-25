@@ -1,386 +1,109 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brandfig — Brand Toolkit for Figma</title>
-  <meta name="description" content="Brandfig is a Figma plugin for brand identity work: logo construction drafts, clear space, color specs, type specimens and layout grids in a few clicks." />
-  <meta property="og:title" content="Brandfig — Brand Toolkit for Figma" />
-  <meta property="og:description" content="Brand guidelines in a few clicks, right inside Figma." />
-  <meta property="og:image" content="https://getbrandfig.com/img/thumbnail.png?v=3" />
-  <meta name="theme-color" content="#0a0a0c" />
-  <link rel="icon" href="img/mark.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=12" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brandfig · Brand work, automated.</title>
+<meta name="description" content="Brandfig automates your brand design workflow in Figma, from construction to the final files. Create faster, ship sooner." />
+<link rel="icon" href="/img/mark.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site.css?v=b2400007" />
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap">
-      <a class="brand" href="./" aria-label="Brandfig home"><img src="img/wordmark.svg" alt="Brandfig" width="1481" height="382" /></a>
-      <nav class="links" aria-label="Main">
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn primary sm" href="#pricing">Get Brandfig</a>
-      </nav>
-    </div>
-  </header>
+<nav class="nav wrap">
+  <a class="mark" href="/"><img src="/img/wordmark.svg" alt="Brandfig"></a>
+  <div class="links">
+    <details class="menu"><summary>Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="drop"><a class="item" href="/logo/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></span><span><b>Logo</b><small>Construction, drawn for you.</small></span></a><a class="item" href="/concepts/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span><span><b>Concepts</b><small>Concept decks, built from your concepts.</small></span></a><a class="item" href="/guidelines/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg></span><span><b>Guidelines</b><small>Guidelines, ready to edit.</small></span></a><a class="item" href="/bento/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span><span><b>Bento</b><small>Bento, filled with your brand.</small></span></a><a class="item" href="/export/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></span><span><b>Export</b><small>The brand kit, exported in one go.</small></span></a></div></details>
+    <a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a>
+  </div>
+  <div class="right">
+    <a class="btn primary" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com">Try free for 3 days</a>
+    <details class="menu burger"><summary aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="drop"><a class="item" href="/logo/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></span><span><b>Logo</b><small>Construction, drawn for you.</small></span></a><a class="item" href="/concepts/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span><span><b>Concepts</b><small>Concept decks, built from your concepts.</small></span></a><a class="item" href="/guidelines/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg></span><span><b>Guidelines</b><small>Guidelines, ready to edit.</small></span></a><a class="item" href="/bento/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span><span><b>Bento</b><small>Bento, filled with your brand.</small></span></a><a class="item" href="/export/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></span><span><b>Export</b><small>The brand kit, exported in one go.</small></span></a><a class="plain" href="/#pricing">Pricing</a><a class="plain" href="/#faq">FAQ</a></div></details>
+  </div>
+</nav>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="copy">
-          <span class="mono eyebrow">Figma plugin for brand identity</span>
-          <h1><span class="nowrap">Brand guidelines</span> in <span class="select">a few clicks<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i><span class="size" aria-hidden="true"></span></span></h1>
-          <p class="lead">Construction drafts, clear space, color specs, type specimens and layout grids, generated from your own artwork, right inside Figma.</p>
-          <div class="cta">
-            <a class="btn primary" href="#pricing">Get Brandfig</a>
-            <a class="btn" href="#features">See how it works</a>
-          </div>
-          <div class="specs mono">
-            <span>Free to install</span>
-            <span>Pro from $4.67/mo</span>
-            <span>Nothing leaves Figma</span>
-          </div>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <img class="sample" src="img/samples/draft.png" alt="" width="800" height="800" />
-          <img class="panel" src="img/panels/draft.png" alt="" width="760" height="1320" />
-        </div>
-      </div>
-    </section>
+<section class="stage" aria-label="Pages Brandfig builds from its deck and guideline templates">
+  <div class="rows"></div>
+  <div class="panel"><img src="/img/panels/logo-construction@2x.png" alt="The Brandfig panel, Logo tool, Construction tab, ready to draw"></div>
+</section>
+<section class="hero-copy wrap">
+  <h1>Brand work, automated.</h1>
+  <p class="lead">Brandfig automates your brand design workflow, from construction to the final files. Create faster, ship sooner.</p>
+  <div class="buttons"><a class="btn primary" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com">Start free trial</a><a class="btn ghost" href="https://www.figma.com/community/plugin/1686542100112642893"><svg class="figlogo" viewBox="0 0 38 57" aria-hidden="true"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg>Get it on Figma</a><span class="btn soon" aria-label="Adobe Illustrator, coming soon"><span class="ai" aria-hidden="true">Ai</span>Adobe Illustrator<small>Coming soon</small></span></div>
+  <p class="note">3 days free, then $7/month. Cancel anytime.</p>
+</section>
 
-    <!-- Spec band -->
-    <div class="band">
-      <div class="wrap">
-        <div class="item reveal"><span class="mono">Output</span><b>Plain Figma layers</b><p>Everything it makes stays fully editable.</p></div>
-        <div class="item reveal"><span class="mono">Accuracy</span><b>Reads your real paths</b><p>Lines, circles and ovals come from your vectors.</p></div>
-        <div class="item reveal"><span class="mono">Privacy</span><b>Nothing uploaded</b><p>Your designs never leave the Figma file.</p></div>
-        <div class="item reveal"><span class="mono">Workflow</span><b>One guideline page</b><p>Pages stack neatly on “Brand Guidelines”.</p></div>
-      </div>
-    </div>
+<section class="block wrap" id="how">
+  <div class="head"><p class="eyebrow">How it works</p><h2>Select, choose, done.</h2><p class="lead">Brandfig works on what you already have in the file: your logos, colours and fonts.</p></div>
+  <div class="steps">
+    <div class="step"><div class="art"><div class="sel"><i></i><i></i><i></i><i></i><svg width="120" height="120" viewBox="0 0 40 40" aria-hidden="true"><path d="M13.0964 20.3536L17.6262 22.4473L17.046 27.6527L8.94876 36.8282C4.2486 33.8023 0.898178 28.8615 0 23.108L13.0964 20.3536Z" fill="#15E3FF"/><path d="M25.183 25.94L31.2414 36.3789C27.992 38.6605 24.0331 40 19.7612 40C18.3744 40 17.0206 39.8587 15.7133 39.59L17.046 27.6527L20.4765 23.7656L25.183 25.94Z" fill="#348DFC"/><path d="M39.1022 14.881C39.5332 16.5143 39.763 18.2294 39.763 19.9982C39.763 24.1145 38.5192 27.9403 36.3874 31.1207L25.184 25.9405L22.5551 21.4123L25.8574 17.6692L39.1022 14.881Z" fill="#FD4873"/><path d="M20.132 0C26.1505 0.109415 31.5194 2.877 35.1148 7.17842L25.8561 17.6694L20.9792 18.6959L18.519 14.4574L20.132 0Z" fill="#FFC700"/><path d="M18.519 14.4574L17.9745 19.3269L13.0991 20.353L0.514709 14.5347C2.09964 8.94044 6.05794 4.3436 11.2327 1.9007L18.519 14.4574Z" fill="#00E7B9"/></svg><b>Mark</b></div></div><h3>Select your logo</h3><p>Pick the mark, the logotype or a frame on the canvas.</p></div>
+    <div class="step"><div class="art"><div class="picks"><span class=""><i><svg viewBox="0 0 24 24" fill="none" stroke="#EDEDEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></i>Logo</span><span class="on"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></i>Concepts</span><span class=""><i><svg viewBox="0 0 24 24" fill="none" stroke="#EDEDEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg></i>Guidelines</span><span class=""><i><svg viewBox="0 0 24 24" fill="none" stroke="#EDEDEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></i>Bento</span><span class=""><i><svg viewBox="0 0 24 24" fill="none" stroke="#EDEDEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></i>Export</span></div></div><h3>Choose what to make</h3><p>Construction, a grid, a concept deck, guidelines or the export.</p></div>
+    <div class="step"><div class="art paper"><img src="/img/steps/construction.jpg" alt="Construction drawn on the ET Robotics mark" loading="lazy"></div><h3>Get editable layers</h3><p>Brandfig draws it in Figma. Change anything, it stays yours.</p></div>
+  </div>
+</section>
 
-    <!-- Features -->
-    <section id="features">
-      <div class="wrap">
-        <div class="head reveal">
-          <span class="mono eyebrow">Features</span>
-          <h2>Five tools for one brand system</h2>
-          <p>Select your logo, pick what you need and press one button. Each tab builds a page you’d otherwise draw from scratch.</p>
-        </div>
+<section class="block wrap" id="tools">
+  <div class="head"><p class="eyebrow">Tools</p><h2>Five tools, one panel.</h2><p class="lead">From the first sketch to the handover. Pick a tool to see it at work.</p></div>
+  <div class="show">
+    <div class="tabs" role="tablist" aria-label="Tools"><button class="tab" role="tab" aria-selected="false" data-key="logo" data-label="Logo tool at work"><span class="name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Logo</span><span class="more">Construction, drawn for you.<a href="/logo/">See the Logo tool</a></span></button><button class="tab" role="tab" aria-selected="true" data-key="concepts" data-label="Concepts tool at work"><span class="name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>Concepts</span><span class="more">Concept decks, built from your concepts.<a href="/concepts/">See the Concepts tool</a></span></button><button class="tab" role="tab" aria-selected="false" data-key="guidelines" data-label="Guidelines tool at work"><span class="name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg>Guidelines</span><span class="more">Guidelines, ready to edit.<a href="/guidelines/">See the Guidelines tool</a></span></button><button class="tab" role="tab" aria-selected="false" data-key="bento" data-label="Bento tool at work"><span class="name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Bento</span><span class="more">Bento, filled with your brand.<a href="/bento/">See the Bento tool</a></span></button><button class="tab" role="tab" aria-selected="false" data-key="export" data-label="Export tool at work"><span class="name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>Export</span><span class="more">The brand kit, exported in one go.<a href="/export/">See the Export tool</a></span></button></div>
+    <div class="loop"><video muted loop playsinline preload="none" poster="/img/loops/concepts.jpg" data-src="/img/loops/concepts.mp4" aria-label="Concepts tool at work"></video></div>
+  </div>
+</section>
 
-        <div class="tabs reveal" role="tablist" aria-label="Brandfig features">
-          <button role="tab" id="t-draft" aria-controls="p-draft" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>Draft</button>
-          <button role="tab" id="t-logo" aria-controls="p-logo" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/></svg>Logo</button>
-          <button role="tab" id="t-colors" aria-controls="p-colors" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>Colors</button>
-          <button role="tab" id="t-type" aria-controls="p-type" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>Type</button>
-          <button role="tab" id="t-layout" aria-controls="p-layout" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>Layout</button>
-        </div>
+<section class="block wrap" id="pricing">
+  <div class="head"><p class="eyebrow">Pricing</p><h2>Try everything free for 3 days.</h2><p class="lead">Every tool, one key for two computers. Pick a plan; both start with 3 free days.</p></div>
+  <div class="plans">
+    <div class="plan"><h3>Monthly</h3><div class="price"><b>$7</b><span>/month</span></div><p>Billed monthly after the 3 free days. Cancel before day 3 and you won’t be charged.</p><a class="btn ghost" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com">Start free trial</a></div>
+    <div class="plan blue"><h3>Yearly</h3><div class="price"><b>$56</b><span>/year, save 33%</span></div><p>$4.67 a month, billed yearly after the 3 free days. Cancel before day 3 and you won’t be charged.</p><a class="btn white" href="https://checkout.dodopayments.com/buy/pdt_0NobmzpvQTNbngnL3Y2Li?quantity=1&amp;redirect_url=https://getbrandfig.com">Start free trial</a></div>
+  </div>
+</section>
 
-        <div class="showcase reveal">
-          <div class="feature" role="tabpanel" id="p-draft" aria-labelledby="t-draft">
-            <div>
-              <span class="mono">01 · Draft</span>
-              <h3>Logo construction,<br>drawn for you</h3>
-              <p>A construction drawing on top of your logo that follows its real geometry, not a generic grid.</p>
-              <ul class="points">
-                <li>Construction lines along every edge, extended at their exact angles</li>
-                <li>The circles and ovals behind every curve, with their radii</li>
-                <li>Anchor points and Bézier handles in one click</li>
-                <li><span>Measured stroke widths, labelled in px <span class="pro">PRO</span></span></li>
-              </ul>
-            </div>
-            <div class="stage">
-              <img class="sample" src="img/samples/draft.png" alt="Construction draft of a three-armed logo: extended edges and fitted circles" width="800" height="800" loading="lazy" />
-              <img class="panel" src="img/panels/draft.png" alt="Brandfig Draft tab" width="760" height="1320" loading="lazy" />
-            </div>
-          </div>
+<section class="block wrap" id="faq">
+  <div class="head"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
+  <div class="faq"><details><summary>Is it AI?</summary><p>No. Construction is geometry: Brandfig reads your logo’s anchor points and curves and draws from them. Decks and guides are templates filled with your own logos, colours and fonts.</p></details><details><summary>How does the free trial work?</summary><p>Every tool is unlocked for 3 days. You add a card at checkout but nothing is charged until day 3; cancel before then and you won’t be charged at all.</p></details><details><summary>How does the subscription work?</summary><p>Pro is billed monthly ($7) or yearly ($56, saving 33%) and renews automatically. Cancel anytime from the link in your receipt email; Pro keeps working until the end of the period you’ve paid for.</p></details><details><summary>How do I activate it?</summary><p>Your license key arrives by email. Open Brandfig in Figma, paste the key and press Activate.</p></details><details><summary>How many computers can I use?</summary><p>One key works on two computers. Teams need one license per designer.</p></details><details><summary>Does my work leave Figma?</summary><p>No. Everything runs inside Figma on your computer. The only thing it checks online is your license. See the <a href="/privacy.html">privacy policy</a>.</p></details><details><summary>Can I get a refund?</summary><p>Payments aren’t refunded, except duplicate charges or where the law requires it. Try it free for 3 days first. See the <a href="/refund.html">refund policy</a>.</p></details><details><summary>Is it coming to Illustrator?</summary><p>Yes, the Illustrator version is in the works.</p></details></div>
+</section>
+<footer class="footer wrap">
+  <div class="cta"><h2>Brand work, automated.</h2><p class="lead">Try every tool free for 3 days. Cancel anytime.</p><div class="buttons"><a class="btn primary" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com">Start free trial</a><a class="btn ghost" href="https://www.figma.com/community/plugin/1686542100112642893"><svg class="figlogo" viewBox="0 0 38 57" aria-hidden="true"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg>Get it on Figma</a></div></div>
+  <div class="cols">
+    <div class="brand"><img src="/img/wordmark.svg" alt="Brandfig"><p>Automation for brand designers, inside Figma.</p><a href="mailto:contact@getbrandfig.com">contact@getbrandfig.com</a></div>
+    <div><h4>Tools</h4><a href="/logo/">Logo</a><a href="/concepts/">Concepts</a><a href="/guidelines/">Guidelines</a><a href="/bento/">Bento</a><a href="/export/">Export</a></div>
+    <div><h4>Product</h4><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="https://www.figma.com/community/plugin/1686542100112642893">Figma Community</a></div>
+    <div><h4>Follow</h4><a href="https://www.instagram.com/getbrandfig/">Instagram</a><a href="https://www.threads.net/@getbrandfig">Threads</a></div>
+    <div><h4>Legal</h4><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/refund.html">Refunds</a></div>
+  </div>
+  <div class="bottom"><span>© 2026 Brandfig</span><span>Made by Nilesh Shukla (Nilesword)</span></div>
+</footer>
+<script>
+// Nav menus: one open at a time; close on outside click or Escape
+const menus = [...document.querySelectorAll('details.menu')];
+menus.forEach(m => m.addEventListener('toggle', () => { if (m.open) menus.forEach(o => { if (o !== m) o.open = false; }); }));
+document.addEventListener('click', e => menus.forEach(m => { if (!m.contains(e.target)) m.open = false; }));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') menus.forEach(m => { m.open = false; }); });
+// Loops play only when visible (and never with reduced motion: the poster shows the finished state)
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(es => es.forEach(e => { const v = e.target;
+  if (e.isIntersecting && !still) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else v.pause(); }), { threshold: .25 });
+document.querySelectorAll('video[data-src]').forEach(v => io.observe(v));
 
-          <div class="feature" role="tabpanel" id="p-logo" aria-labelledby="t-logo">
-            <div>
-              <span class="mono">02 · Logo <span class="pro">PRO</span></span>
-              <h3>Clear space and minimum size</h3>
-              <p>Two pages every guideline needs, measured from your artwork instead of eyeballed.</p>
-              <ul class="points">
-                <li>Clear space in x units, based on the logo’s height or its logomark</li>
-                <li>Minimum size tests that flag where the logo stops reading</li>
-                <li>Pages stack neatly on a Brand Guidelines page</li>
-              </ul>
-            </div>
-            <div class="stage">
-              <img class="sample" src="img/samples/logo.png" alt="Clear space diagram around a logo" width="800" height="800" loading="lazy" />
-              <img class="panel" src="img/panels/logo.png" alt="Brandfig Logo tab" width="760" height="1320" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="feature" role="tabpanel" id="p-colors" aria-labelledby="t-colors">
-            <div>
-              <span class="mono">03 · Colors <span class="pro">PRO</span></span>
-              <h3>Every color spec on one page</h3>
-              <p>List your colors once and get a complete palette sheet, named and labelled.</p>
-              <ul class="points">
-                <li>HEX, RGB, CMYK and HSL values, with suggested color names</li>
-                <li>Contrast ratios on white and black, rated AA or AAA, plus tints and shades</li>
-                <li>Save as color styles or variables</li>
-              </ul>
-            </div>
-            <div class="stage">
-              <img class="sample" src="img/samples/colors.png" alt="Palette sheet with color values" width="800" height="800" loading="lazy" />
-              <img class="panel" src="img/panels/colors.png" alt="Brandfig Colors tab" width="760" height="1320" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="feature" role="tabpanel" id="p-type" aria-labelledby="t-type">
-            <div>
-              <span class="mono">04 · Type <span class="pro">PRO</span></span>
-              <h3>Type specimens that set themselves</h3>
-              <p>Your brand typefaces set as proper specimens, with a scale you don’t have to calculate.</p>
-              <ul class="points">
-                <li>Every chosen weight with its character set</li>
-                <li>A modular type scale built from your body size</li>
-                <li>Save the sizes as text styles</li>
-              </ul>
-            </div>
-            <div class="stage">
-              <img class="sample" src="img/samples/type.png" alt="Type specimen with a type scale" width="800" height="800" loading="lazy" />
-              <img class="panel" src="img/panels/type.png" alt="Brandfig Type tab" width="760" height="1320" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="feature" role="tabpanel" id="p-layout" aria-labelledby="t-layout">
-            <div>
-              <span class="mono">05 · Layout <span class="pro">PRO</span></span>
-              <h3>Grids and formats, ready to design</h3>
-              <p>Start every brand application on the right grid, at the right size.</p>
-              <ul class="points">
-                <li>Column and row grids for any frame</li>
-                <li>Business cards, letterheads, posts, stories, slides and more</li>
-                <li>Margins and gutters scale to each format</li>
-              </ul>
-            </div>
-            <div class="stage">
-              <img class="sample" src="img/samples/layout.png" alt="Instagram post with a 12-column grid" width="800" height="800" loading="lazy" />
-              <img class="panel" src="img/panels/layout.png" alt="Brandfig Layout tab" width="760" height="1320" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="how" style="padding-top: 0">
-      <div class="wrap">
-        <div class="head reveal">
-          <span class="mono eyebrow">How it works</span>
-          <h2>Three steps to a finished guideline page</h2>
-        </div>
-        <div class="steps">
-          <div class="step reveal">
-            <div class="vis"><svg viewBox="0 0 320 220" aria-hidden="true">
-              <path d="M221.6 140.4L211.1 157.9C209.5 160.5 206.1 161.3 203.5 159.6L174.7 140.7L174.6 140.6C171.7 138.7 169.9 135.5 169.9 132L169.9 112.1C169.9 106.6 165.6 101.9 160.1 101.7C154.3 101.5 149.5 106.1 149.5 111.9L149.5 132.4C149.5 135.9 147.8 139.2 144.9 141.1L116.6 159.6C114 161.3 110.5 160.6 108.9 157.9L98.4 140.4C96.9 137.9 97.6 134.7 100.1 133L131.5 112.4L140 106.9C143 104.9 144.9 101.4 144.9 97.8L144.9 52.9C144.9 49.9 147.3 47.4 150.3 47.4L169.3 47.4C172.3 47.4 174.7 49.9 174.7 52.9L174.7 97.5C174.7 101.2 176.6 104.6 179.6 106.6L188.5 112.4L219.9 133.1C222.4 134.7 223.1 137.9 221.6 140.4L221.6 140.4Z" fill="#f4f4f1"/>
-              <rect x="90.4" y="39.4" width="139.2" height="128.2" fill="none" stroke="#0d99ff" stroke-width="1.5"/><rect x="86.9" y="35.9" width="7" height="7" rx="1" fill="#fff" stroke="#0d99ff" stroke-width="1.5"/><rect x="226.1" y="35.9" width="7" height="7" rx="1" fill="#fff" stroke="#0d99ff" stroke-width="1.5"/><rect x="86.9" y="164.1" width="7" height="7" rx="1" fill="#fff" stroke="#0d99ff" stroke-width="1.5"/><rect x="226.1" y="164.1" width="7" height="7" rx="1" fill="#fff" stroke="#0d99ff" stroke-width="1.5"/>
-              <rect x="130.0" y="176.6" width="60" height="17" rx="4" fill="#0d99ff"/><text x="160.0" y="188.6" text-anchor="middle" class="tag">123 × 112</text>
-              <g class="cursor" transform="translate(224 126) scale(1.2)"><path d="M0 0l15.6 8.4c.8.4.7 1.6-.2 1.8l-6.6 1.6-3.1 6.2c-.4.8-1.6.7-1.8-.2L0 0z" fill="#0a0a0c" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></g>
-            </svg></div>
-            <div class="txt"><h3><span class="num">01</span>Select your logo</h3><p>Pick a logo, lettering or a few frames in any Figma file.</p></div>
-          </div>
-          <div class="step reveal">
-            <div class="vis"><div class="mini-panel" aria-hidden="true"><div class="sw-row"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg><span>Lines</span><i class="on"></i></div><div class="sw-row"><svg viewBox="0 0 24 24"><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 16A10 10 0 0 1 16 6"/></svg><span>Anchors</span><i class="on"></i></div><div class="sw-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><path d="M4 12h5.5M14.5 12H20"/></svg><span>Handles</span><i class=""></i></div><div class="sw-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg><span>Circles</span><i class="on"></i></div><div class="mini-btn">Make Draft</div></div></div>
-            <div class="txt"><h3><span class="num">02</span>Choose what to show</h3><p>Switch construction lines, anchors, handles and circles on or off, or pick the pages you need.</p></div>
-          </div>
-          <div class="step reveal">
-            <div class="vis"><svg viewBox="0 0 320 220" aria-hidden="true"><g transform="translate(-10 0)">
-              <g class="cl"><line x1="96.9" y1="36.2" x2="96.9" y2="182.9"/><line x1="126.7" y1="36.2" x2="126.7" y2="182.9"/><line x1="33.1" y1="48" x2="190.9" y2="151.5"/><line x1="33.1" y1="151.5" x2="190.9" y2="48"/><line x1="33.1" y1="85.3" x2="181.8" y2="182.9"/><line x1="190.9" y1="85.4" x2="42.3" y2="182.9"/><line x1="101.5" y1="36.2" x2="101.5" y2="182.9"/><line x1="121.9" y1="36.2" x2="121.9" y2="182.9"/><line x1="33.1" y1="53.5" x2="190.9" y2="53.5"/><line x1="33.1" y1="117.7" x2="72.3" y2="182.9"/><line x1="190.9" y1="117.8" x2="151.7" y2="182.9"/></g><g class="cc"><circle cx="111.7" cy="117.9" r="10.2"/><circle cx="158.5" cy="161.1" r="5.4"/><circle cx="65.6" cy="161.1" r="5.4"/><circle cx="102.3" cy="58.9" r="5.4"/><circle cx="121.3" cy="58.9" r="5.4"/><circle cx="55" cy="143.6" r="5.4"/><circle cx="169" cy="143.6" r="5.4"/><circle cx="91.2" cy="138.4" r="10.3"/><circle cx="132.2" cy="138" r="10.3"/><circle cx="86" cy="103.8" r="10.9"/><circle cx="137.6" cy="103.5" r="10.9"/></g>
-              <path d="M173.6 146.4L163.1 163.9C161.5 166.5 158.1 167.3 155.5 165.6L126.7 146.7L126.6 146.6C123.7 144.7 121.9 141.5 121.9 138L121.9 118.1C121.9 112.6 117.6 107.9 112.1 107.7C106.3 107.5 101.5 112.1 101.5 117.9L101.5 138.4C101.5 141.9 99.8 145.2 96.9 147.1L68.6 165.6C66 167.3 62.5 166.6 60.9 163.9L50.4 146.4C48.9 143.9 49.6 140.7 52.1 139L83.5 118.4L92 112.9C95 110.9 96.9 107.4 96.9 103.8L96.9 58.9C96.9 55.9 99.3 53.5 102.3 53.5L121.3 53.5C124.3 53.5 126.7 55.9 126.7 58.9L126.7 103.5C126.7 107.2 128.6 110.6 131.6 112.6L140.5 118.4L171.9 139.1C174.4 140.7 175.1 143.9 173.6 146.4L173.6 146.4Z" fill="rgba(255,255,255,.08)" stroke="#f4f4f1" stroke-width="1.3" stroke-linejoin="round"/>
-              <g fill="#fff"><rect x="171.6" y="144.4" width="4" height="4"/><rect x="161.1" y="161.9" width="4" height="4"/><rect x="153.5" y="163.6" width="4" height="4"/><rect x="124.7" y="144.7" width="4" height="4"/><rect x="119.9" y="136.0" width="4" height="4"/><rect x="119.9" y="116.1" width="4" height="4"/><rect x="110.1" y="105.7" width="4" height="4"/><rect x="99.5" y="115.9" width="4" height="4"/><rect x="99.5" y="136.4" width="4" height="4"/><rect x="94.9" y="145.1" width="4" height="4"/><rect x="66.6" y="163.6" width="4" height="4"/><rect x="58.9" y="161.9" width="4" height="4"/><rect x="48.4" y="144.4" width="4" height="4"/><rect x="50.1" y="137.0" width="4" height="4"/><rect x="81.5" y="116.4" width="4" height="4"/><rect x="90.0" y="110.9" width="4" height="4"/><rect x="94.9" y="101.8" width="4" height="4"/><rect x="94.9" y="56.9" width="4" height="4"/><rect x="100.3" y="51.5" width="4" height="4"/><rect x="119.3" y="51.5" width="4" height="4"/><rect x="124.7" y="56.9" width="4" height="4"/><rect x="124.7" y="101.5" width="4" height="4"/><rect x="129.6" y="110.6" width="4" height="4"/><rect x="138.5" y="116.4" width="4" height="4"/><rect x="169.9" y="137.1" width="4" height="4"/></g>
-              <text x="200" y="34" class="layer head">LAYERS</text><rect x="200" y="46" width="112" height="20" rx="4" fill="rgba(13,153,255,.16)"/><text x="208" y="60" class="layer on">▾ Construction draft</text><text x="222" y="82" class="layer">Lines</text><text x="222" y="104" class="layer">Circles</text><text x="222" y="126" class="layer">Anchors</text><text x="208" y="148" class="layer">Logo</text>
-            </g></svg></div>
-            <div class="txt"><h3><span class="num">03</span>Make it, then edit</h3><p>Brandfig draws it as plain Figma layers, ready to tweak and drop into your guidelines.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" style="padding-top: 0">
-      <div class="wrap">
-        <div class="head center reveal">
-          <span class="mono eyebrow">Pricing</span>
-          <h2>Start free, go Pro when you need it</h2>
-          <p>Brandfig is free to install from Figma Community. Pro unlocks the full toolkit. Cancel anytime.</p>
-        </div>
-        <div class="center-row reveal">
-          <div class="billing" role="group" aria-label="Billing period">
-            <button type="button" class="on" data-billing="monthly" aria-pressed="true">Monthly</button>
-            <button type="button" data-billing="yearly" aria-pressed="false">Yearly <span class="save">SAVE 33%</span></button>
-          </div>
-        </div>
-        <div class="plans">
-          <div class="plan reveal">
-            <div class="top"><h3>Free</h3></div>
-            <div class="price">$0</div>
-            <p class="note">Forever</p>
-            <ul>
-              <li>Logo construction drafts</li>
-              <li>Lines, anchors, handles and circles</li>
-              <li>Switch each part on or off</li>
-              <li>Clean default styling</li>
-            </ul>
-            <a class="btn" href="https://www.figma.com/community/plugin/1686542100112642893" target="_blank" rel="noopener">Install from Figma Community</a>
-          </div>
-          <div class="plan featured reveal">
-            <div class="top"><h3>Pro</h3><span class="badge">FULL TOOLKIT</span></div>
-            <div class="price" data-monthly="$7 <small>/ month</small>" data-yearly="$56 <small>/ year</small>">$7 <small>/ month</small></div>
-            <p class="note" data-monthly="Billed monthly · cancel anytime" data-yearly="$4.67 / month, billed yearly · save &#36;28 a year">Billed monthly · cancel anytime</p>
-            <ul>
-              <li>Everything in Free</li>
-              <li>Customize the construction: line detail, line styles, anchor and handle styles, stroke widths</li>
-              <li>Clear space and minimum size pages</li>
-              <li>Color pages with HEX, RGB, CMYK, HSL and contrast ratings</li>
-              <li>Type specimens and type scales</li>
-              <li>Layout grids and brand formats</li>
-              <li>Save colors and type as styles and variables</li>
-              <li>All future updates</li>
-            </ul>
-            <a class="btn primary" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com" data-checkout data-monthly-href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com" data-yearly-href="https://checkout.dodopayments.com/buy/pdt_0NobmzpvQTNbngnL3Y2Li?quantity=1&amp;redirect_url=https://getbrandfig.com">Get Pro</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" style="padding-top: 0">
-      <div class="wrap faq">
-        <div class="aside reveal">
-          <span class="mono eyebrow">FAQ</span>
-          <h2>Questions</h2>
-          <p>Can't find what you're looking for? We usually reply within a day.</p>
-          <a class="btn" href="mailto:nilesword.business@gmail.com">Email us</a>
-        </div>
-        <div class="faq-list reveal">
-          <details open>
-            <summary>How do I activate Pro?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>After you subscribe, your license key arrives by email. Open Brandfig in Figma, click <b>Upgrade to Pro</b> at the bottom, paste the key under “Already bought?” and press <b>Activate</b>. That's it.</p></div>
-          </details>
-          <details>
-            <summary>How does the subscription work?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Pro is billed monthly ($7) or yearly ($56, saving 33%) and renews automatically. Cancel anytime from the link in your receipt email; Pro keeps working until the end of the period you've paid for.</p></div>
-          </details>
-          <details>
-            <summary>How many computers can I use it on?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>One license can be activated on up to 2 computers for the same person. Teams need one license per designer.</p></div>
-          </details>
-          <details>
-            <summary>Who handles the payment?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>Payments are processed by Dodo Payments, our merchant of record. They handle checkout, taxes and receipts; we never see your card details.</p></div>
-          </details>
-          <details>
-            <summary>Can I get a refund?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>No. Payments are final, so please try the free version first to make sure Brandfig fits your workflow. See the <a href="refund.html">refund policy</a> for the few exceptions.</p></div>
-          </details>
-          <details>
-            <summary>Does Brandfig upload my designs?<span class="ico" aria-hidden="true"></span></summary>
-            <div class="answer"><p>No. Everything runs inside Figma on your computer. The only thing sent anywhere is your license key, to check it's valid. See the <a href="privacy.html">privacy policy</a>.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <div class="final">
-      <div class="wrap">
-        <div class="box reveal">
-          <h2>Start free. Upgrade when it clicks.</h2>
-          <p>Install Brandfig from Figma Community and draw your first logo construction in under a minute. Pro unlocks the full toolkit whenever you’re ready.</p>
-          <div class="cta">
-            <a class="btn light" href="https://www.figma.com/community/plugin/1686542100112642893" target="_blank" rel="noopener">Start free</a>
-            <a class="btn ghost" href="https://checkout.dodopayments.com/buy/pdt_0Nobm5F51QuNxu7qwlBDT?quantity=1&amp;redirect_url=https://getbrandfig.com">Get Pro</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="top">
-        <div class="brand">
-          <img src="img/wordmark.svg" alt="Brandfig" width="1481" height="382" />
-          <p>Brand toolkit for Figma. Construction drafts, clear space, colors, type and grids.</p>
-        </div>
-        <nav aria-label="Footer">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <a href="terms.html">Terms</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="refund.html">Refunds</a>
-          <a href="mailto:nilesword.business@gmail.com">Contact</a>
-        </nav>
-      </div>
-      <div class="bottom">
-        <span>© 2026 Brandfig</span>
-        <span>Made by <a href="https://www.instagram.com/nilesword/" rel="noopener">Nilesword</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.documentElement.classList.remove('no-js');
-
-    // Selection size badge shows the highlight's real width × height, like Figma
-    const sel = document.querySelector('h1 .select');
-    const sizeSel = () => { const r = sel.getBoundingClientRect(); sel.querySelector('.size').textContent = Math.round(r.width) + ' × ' + Math.round(r.height); };
-    sizeSel(); addEventListener('resize', sizeSel); document.fonts && document.fonts.ready.then(sizeSel);
-
-    // Nav gets a background once the page scrolls
-    const nav = document.querySelector('.nav');
-    const onScroll = () => nav.classList.toggle('scrolled', scrollY > 8);
-    onScroll(); addEventListener('scroll', onScroll, { passive: true });
-
-    // Feature tabs (arrow keys move between tabs)
-    const tabs = [...document.querySelectorAll('[role="tab"]')];
-    const select = tab => {
-      tabs.forEach(t => {
-        const on = t === tab;
-        t.setAttribute('aria-selected', on);
-        t.tabIndex = on ? 0 : -1;
-        const panel = document.getElementById(t.getAttribute('aria-controls'));
-        panel.hidden = !on;
-        if (on) { panel.classList.remove('enter'); void panel.offsetWidth; panel.classList.add('enter'); }
-      });
-    };
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => select(t));
-      t.addEventListener('keydown', e => {
-        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus(); }
-      });
-    });
-    select(tabs[0]);
-
-    // Monthly / yearly switch: swaps the Pro price, note and checkout link
-    document.querySelectorAll('[data-billing]').forEach(btn => btn.addEventListener('click', () => {
-      const period = btn.dataset.billing;
-      document.querySelectorAll('[data-billing]').forEach(b => { b.classList.toggle('on', b === btn); b.setAttribute('aria-pressed', b === btn); });
-      document.querySelectorAll('[data-monthly][data-yearly]').forEach(el => { el.innerHTML = el.dataset[period]; });
-      const cta = document.querySelector('[data-checkout]');
-      cta.href = cta.dataset[period + 'Href'];
-    }));
-
-    // Reveal on scroll, siblings staggered slightly
-    const io = 'IntersectionObserver' in window && new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.reveal').forEach(el => {
-      const sibs = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
-      if (sibs.length > 1) el.style.transitionDelay = sibs.indexOf(el) * 70 + 'ms';
-      io ? io.observe(el) : el.classList.add('in');
-    });
-  </script>
+// Hero: two rows of real template pages flow out from behind the panel (two copies each: a seamless loop at -50%)
+const TOP = ['decks/northwind', 'guides/transit-pattern', 'decks/kestrel', 'decks/fieldwork', 'decks/sundae', 'decks/riot-club', 'decks/basalt'], BOTTOM = ['decks/northwind-colour', 'guides/funhaus-typefaces', 'decks/kestrel-brief', 'guides/full-circle-pattern', 'decks/fieldwork-concept', 'guides/arcadia-palette', 'decks/basalt-type', 'decks/riot-club-next-steps', 'guides/transit-contents', 'decks/sundae-three-words', 'decks/basalt-thanks'];
+const rows = document.querySelector('.rows');
+for (const [set, dur] of [[TOP, 80], [BOTTOM, 110]]) {
+  const r = document.createElement('div'); r.className = 'row'; r.style.setProperty('--dur', dur + 's');
+  r.innerHTML = [...set, ...set].map((n, i) => `<img src="/img/${n}.png" alt="" ${i < 4 ? '' : 'loading="lazy"'}>`).join('');
+  rows.appendChild(r);
+}
+// Tools: each tab swaps in its own loop
+const video = document.querySelector('#tools video');
+document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t === tab)));
+  const k = tab.dataset.key; video.poster = `/img/loops/${k}.jpg`; video.dataset.src = `/img/loops/${k}.mp4`; video.setAttribute('aria-label', tab.dataset.label);
+  if (still) { video.removeAttribute('src'); video.load(); } else { video.src = video.dataset.src; video.play().catch(() => {}); }
+}));
+</script>
 </body>
 </html>
