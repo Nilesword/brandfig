@@ -5,8 +5,8 @@
 steps). Edit copy in `build.py`, run `python build.py`, commit, push. These notes are excluded from the published site
 (`_config.yml`).
 
-**2026-10-29 refinements:** the hero stage shrinks with the window (`--stage-h` in `site.css`) so the headline, sub-line
-and buttons show on load on laptops; the panel stays whole and scales with it. Hero pages and panel are WebP (half the
+**2026-10-29 refinements:** (a shrinking hero that fit the first screen was tried and reverted: the owner prefers the
+full 820 px stage with the panel at 360 × 720.) Hero pages and panel are WebP (half the
 weight). Link previews: `img/og.jpg` (made from `notes/og.html`), Open Graph and Twitter tags and a canonical URL on every
 page, `img/apple-touch-icon.png`. Old screenshots removed from `img/`. Older paths below that start with `v2/` or `img/...` inside v2 now live at the root.
 
