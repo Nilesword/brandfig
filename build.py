@@ -53,11 +53,12 @@ TOOLS = [
     ('For the client', 'An optional guidelines PDF, a font list and a Which file to use PDF, all in the same zip.')]),
 ]
 
-def toolmenu():
-    return ''.join(f'<a class="item" href="/{t[0]}/"><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
+def toolmenu(active=None):
+    return ''.join(f'<a class="item{" on" if t[0] == active else ""}" href="/{t[0]}/"{" aria-current=\"page\"" if t[0] == active else ""}><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
 
 def head(title, desc, path='/'):
-    TOOLMENU = toolmenu()
+    active = path.strip('/') or None
+    TOOLMENU = toolmenu(active)
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -85,10 +86,10 @@ def head(title, desc, path='/'):
 <link rel="stylesheet" href="/site.css?v={CSS_V}" />
 </head>
 <body>
-<nav class="nav wrap">
+<header class="bar"><nav class="nav wrap">
   <a class="mark" href="/"><img src="/img/wordmark.svg" alt="Brandfig"></a>
   <div class="links">
-    <details class="menu"><summary>Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+    <details class="menu"><summary{' class="here"' if active else ''}>Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
       <div class="drop">{TOOLMENU}</div></details>
     <a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a>
   </div>
@@ -97,7 +98,7 @@ def head(title, desc, path='/'):
     <details class="menu burger"><summary aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="drop">{TOOLMENU}<a class="plain" href="/#pricing">Pricing</a><a class="plain" href="/#faq">FAQ</a></div></details>
   </div>
-</nav>
+</nav></header>
 '''
 
 BUTTONS = f'''<div class="buttons"><a class="btn primary" href="{MONTHLY}">Start free trial</a><a class="btn ghost" href="{FIGMA}">{FIGLOGO}Get it on Figma</a></div>'''
@@ -121,6 +122,10 @@ def loop(key, label, lazy=True):
             f'aria-label="{label}"></video></div>')
 
 SCRIPT = '''<script>
+// Sticky bar: tightens and lifts a shade once the page scrolls
+const bar = document.querySelector('.bar');
+const onScroll = () => bar.classList.toggle('scrolled', scrollY > 8);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
 // Nav menus: one open at a time; close on outside click or Escape
 const menus = [...document.querySelectorAll('details.menu')];
 menus.forEach(m => m.addEventListener('toggle', () => { if (m.open) menus.forEach(o => { if (o !== m) o.open = false; }); }));
