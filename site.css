@@ -26,14 +26,14 @@ img, video { display: block; max-width: 100%; }
 .menu summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
 .menu[open] summary svg { transform: rotate(180deg); }
 .drop { position: absolute; top: calc(100% + 14px); left: -20px; z-index: 20; width: 360px; padding: 8px; border-radius: 16px; background: var(--card); display: grid; gap: 2px; }
-.drop .item { display: flex; gap: 14px; align-items: flex-start; padding: 12px; border-radius: 10px; }
-.drop .item:hover { background: var(--raised); }
-.drop .ic { width: 36px; height: 36px; border-radius: 9px; background: var(--raised); display: grid; place-items: center; flex: none; }
+.drop .item { display: flex; gap: 14px; align-items: center; padding: 10px 12px; border-radius: 10px; }
+.drop .item:hover, .drop .plain:hover { background: #1e1e23; }
+.drop .item:hover .ic { background: #2c2c33; }
+.drop .ic { width: 36px; height: 36px; border-radius: 9px; background: #24242a; display: grid; place-items: center; flex: none; }
 .drop .ic svg { width: 18px; height: 18px; }
-.drop b { display: block; font-weight: 600; font-size: 16px; }
-.drop small { display: block; font-size: 14px; color: var(--quiet); font-weight: 400; line-height: 1.4; }
-.drop .plain { padding: 12px; border-radius: 10px; font-weight: 500; font-size: 16px; }
-.drop .plain:hover { background: var(--raised); }
+.drop b { display: block; font-weight: 600; font-size: 15px; line-height: 1.3; }
+.drop small { display: block; font-size: 13px; color: var(--quiet); font-weight: 400; line-height: 1.4; }
+.drop .plain { padding: 10px 12px; border-radius: 10px; font-weight: 500; font-size: 15px; }
 .burger { display: none; }
 .burger summary { width: 44px; height: 44px; border-radius: 999px; background: var(--raised); justify-content: center; }
 .burger summary svg { width: 20px; height: 20px; transform: none !important; }
