@@ -56,7 +56,7 @@ TOOLS = [
 def toolmenu():
     return ''.join(f'<a class="item" href="/{t[0]}/"><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
 
-def head(title, desc):
+def head(title, desc, path='/'):
     TOOLMENU = toolmenu()
     return f'''<!doctype html>
 <html lang="en">
@@ -66,6 +66,19 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}" />
 <link rel="icon" href="/img/mark.svg" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="canonical" href="https://getbrandfig.com{path}" />
+<meta name="theme-color" content="#0a0a0c" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Brandfig" />
+<meta property="og:title" content="{title}" />
+<meta property="og:description" content="{desc}" />
+<meta property="og:url" content="https://getbrandfig.com{path}" />
+<meta property="og:image" content="https://getbrandfig.com/img/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://getbrandfig.com/img/og.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet" />
@@ -148,7 +161,7 @@ def home():
     return head('Brandfig · Brand work, automated.', 'Brandfig automates your brand design workflow in Figma, from construction to the final files. Create faster, ship sooner.') + f'''
 <section class="stage" aria-label="Pages Brandfig builds from its deck and guideline templates">
   <div class="rows"></div>
-  <div class="panel"><img src="/img/panels/logo-construction@2x.png" alt="The Brandfig panel, Logo tool, Construction tab, ready to draw"></div>
+  <div class="panel"><img src="/img/panels/logo-construction@2x.webp" width="360" height="720" alt="The Brandfig panel, Logo tool, Construction tab, ready to draw"></div>
 </section>
 <section class="hero-copy wrap">
   <h1>Brand work, automated.</h1>
@@ -192,7 +205,7 @@ const TOP = {TOP!r}, BOTTOM = {BOTTOM!r};
 const rows = document.querySelector('.rows');
 for (const [set, dur] of [[TOP, 80], [BOTTOM, 110]]) {{
   const r = document.createElement('div'); r.className = 'row'; r.style.setProperty('--dur', dur + 's');
-  r.innerHTML = [...set, ...set].map((n, i) => `<img src="/img/${{n}}.png" alt="" ${{i < 4 ? '' : 'loading="lazy"'}}>`).join('');
+  r.innerHTML = [...set, ...set].map((n, i) => `<img src="/img/${{n}}.webp" width="480" height="270" alt="" ${{i < 4 ? '' : 'loading="lazy"'}}>`).join('');
   rows.appendChild(r);
 }}
 // Tools: each tab swaps in its own loop
@@ -207,7 +220,7 @@ document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', (
 def tool(t):
     key, name, stage, h1, _, sub, ic, cards = t
     cards_html = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in cards)
-    return head(f'{name} · Brandfig', sub) + f'''
+    return head(f'{name} · Brandfig', sub, f'/{key}/') + f'''
 <section class="tool-hero wrap">
   <p class="eyebrow">{stage} · {name}</p>
   <h1>{h1}</h1>

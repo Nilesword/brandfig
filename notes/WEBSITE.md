@@ -3,7 +3,12 @@
 **Live since 2026-10-26.** The site now lives at the repo root: `build.py` writes `index.html` and `logo/`, `concepts/`,
 `guidelines/`, `bento/`, `export/` (clean URLs), styled by `site.css`; assets in `img/` (decks, guides, loops, panels,
 steps). Edit copy in `build.py`, run `python build.py`, commit, push. These notes are excluded from the published site
-(`_config.yml`). Older paths below that start with `v2/` or `img/...` inside v2 now live at the root.
+(`_config.yml`).
+
+**2026-10-29 refinements:** the hero stage shrinks with the window (`--stage-h` in `site.css`) so the headline, sub-line
+and buttons show on load on laptops; the panel stays whole and scales with it. Hero pages and panel are WebP (half the
+weight). Link previews: `img/og.jpg` (made from `notes/og.html`), Open Graph and Twitter tags and a canonical URL on every
+page, `img/apple-touch-icon.png`. Old screenshots removed from `img/`. Older paths below that start with `v2/` or `img/...` inside v2 now live at the root.
 
 Read this first when working on the new site. It holds every decision so far, so a new chat can pick up without
 losing context. Keep it current after each session. The live site (`../index.html`, `../style.css`) is untouched
