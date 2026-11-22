@@ -53,10 +53,27 @@ TOOLS = [
     ('For the client', 'An optional guidelines PDF, a font list and a Which file to use PDF, all in the same zip.')]),
 ]
 
+# ---------- search: titles and descriptions carry the words people search for; the visible copy stays in the brand voice
+SITE = 'https://getbrandfig.com'
+SEO = {
+  '/': ('Brandfig: Logo construction and brand guidelines plugin for Figma',
+        'Brandfig is a Figma plugin for brand designers. Draw logo construction grids, build concept decks and brand guidelines, and export every logo file in one go.'),
+  'logo': ('Logo construction grid generator for Figma · Brandfig',
+           'Draw logo construction lines, circles and anchors from your real vector paths in Figma. Plus base grids, clear space and lockup guides.'),
+  'concepts': ('Logo concept presentation templates for Figma · Brandfig',
+               'Turn your logo concepts into a client-ready presentation in Figma. Six templates, up to six concepts, every page editable.'),
+  'guidelines': ('Brand guidelines generator for Figma · Brandfig',
+                 'Build brand guidelines from your logos, colours and type in Figma. Twelve templates, pages you can reorder and lock, and a PDF export.'),
+  'bento': ('Brand bento grid generator for Figma · Brandfig',
+            'Fill any Figma frame with a bento grid of your brand: logo, colours, type, construction and patterns. Even, Feature and Brick layouts.'),
+  'export': ('Export logo files in every format from Figma · Brandfig',
+             'Export every logo version as AI, EPS, PDF, SVG, PNG and JPG in one zip from Figma, with a guidelines PDF and a Which file to use guide.'),
+}
+
 def toolmenu(active=None):
     return ''.join(f'<a class="item{" on" if t[0] == active else ""}" href="/{t[0]}/"{" aria-current=\"page\"" if t[0] == active else ""}><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
 
-def head(title, desc, path='/'):
+def head(title, desc, path='/', ld=''):
     active = path.strip('/') or None
     TOOLMENU = toolmenu(active)
     return f'''<!doctype html>
@@ -84,7 +101,7 @@ def head(title, desc, path='/'):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/site.css?v={CSS_V}" />
-</head>
+{ld}</head>
 <body>
 <header class="bar"><nav class="nav wrap">
   <a class="mark" href="/"><img src="/img/wordmark.svg" alt="Brandfig"></a>
@@ -156,6 +173,31 @@ FAQ = [
   ('Is it coming to Illustrator?', 'Yes, the Illustrator version is in the works.'),
 ]
 
+import json, re
+def ldjson(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>' + chr(10)
+APP = {
+  '@type': 'SoftwareApplication', 'name': 'Brandfig', 'url': SITE + '/',
+  'applicationCategory': 'DesignApplication', 'operatingSystem': 'Figma (web, macOS, Windows)',
+  'description': SEO['/'][1], 'image': SITE + '/img/og.jpg', 'downloadUrl': FIGMA, 'installUrl': FIGMA,
+  'featureList': ['Logo construction lines, circles and anchors', 'Base grids', 'Clear space and minimum sizes', 'Lockup guides',
+                  'Logo concept presentations', 'Brand guidelines with PDF export', 'Bento grids', 'Logo export in AI, EPS, PDF, SVG, PNG and JPG'],
+  'offers': [
+    {'@type': 'Offer', 'name': 'Monthly', 'price': '7', 'priceCurrency': 'USD', 'url': MONTHLY.replace('&amp;', '&'), 'description': '3-day free trial, then billed monthly'},
+    {'@type': 'Offer', 'name': 'Yearly', 'price': '56', 'priceCurrency': 'USD', 'url': YEARLY.replace('&amp;', '&'), 'description': '3-day free trial, then billed yearly'}],
+  'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/', 'logo': SITE + '/img/apple-touch-icon.png', 'email': 'contact@getbrandfig.com',
+                'sameAs': [FIGMA, 'https://www.instagram.com/getbrandfig/', 'https://www.threads.net/@getbrandfig']},
+}
+def home_ld():
+    faq = {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub('<[^>]+>', '', a)}} for q, a in FAQ]}
+    site = {'@type': 'WebSite', 'name': 'Brandfig', 'url': SITE + '/'}
+    return ldjson({'@context': 'https://schema.org', '@graph': [site, APP, faq]})
+def tool_ld(key, name):
+    crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
+        {'@type': 'ListItem', 'position': 2, 'name': name, 'item': f'{SITE}/{key}/'}]}
+    return ldjson({'@context': 'https://schema.org', '@graph': [crumbs]})
+
 def home():
     tabs = ''.join(
         f'<button class="tab" role="tab" aria-selected="{"true" if t[0] == "concepts" else "false"}" data-key="{t[0]}" data-label="{t[1]} tool at work">'
@@ -163,7 +205,7 @@ def home():
         for t in TOOLS)
     picks = ''.join(f'<span class="{"on" if t[0] == "concepts" else ""}"><i>{icon(t[6], "#0A0A0C" if t[0] == "concepts" else "#EDEDEA")}</i>{t[1]}</span>' for t in TOOLS)
     faq = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)
-    return head('Brandfig · Brand work, automated.', 'Brandfig automates your brand design workflow in Figma, from construction to the final files. Create faster, ship sooner.') + f'''
+    return head(*SEO['/'], '/', home_ld()) + f'''
 <section class="stage" aria-label="Pages Brandfig builds from its deck and guideline templates">
   <div class="rows"></div>
   <div class="panel"><img src="/img/panels/logo-construction@2x.webp" width="360" height="720" alt="The Brandfig panel, Logo tool, Construction tab, ready to draw"></div>
@@ -225,7 +267,7 @@ document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', (
 def tool(t):
     key, name, stage, h1, _, sub, ic, cards = t
     cards_html = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in cards)
-    return head(f'{name} · Brandfig', sub, f'/{key}/') + f'''
+    return head(*SEO[key], f'/{key}/', tool_ld(key, name)) + f'''
 <section class="tool-hero wrap">
   <p class="eyebrow">{stage} · {name}</p>
   <h1>{h1}</h1>
@@ -245,4 +287,11 @@ if __name__ == '__main__':
     for t in TOOLS:
         os.makedirs(t[0], exist_ok=True)
         open(f'{t[0]}/index.html', 'w', encoding='utf-8').write(tool(t))
+    import datetime
+    today = datetime.date.today().isoformat()
+    urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + ['/terms.html', '/privacy.html', '/refund.html']
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sm += [f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod></url>' for u in urls] + ['</urlset>', '']
+    open('sitemap.xml', 'w', encoding='utf-8').write(chr(10).join(sm))
+    open('robots.txt', 'w', encoding='utf-8').write(chr(10).join(['User-agent: *', 'Allow: /', 'Disallow: /notes/', '', f'Sitemap: {SITE}/sitemap.xml', '']))
     print('built: index.html, ' + ', '.join(f'{t[0]}/' for t in TOOLS))
