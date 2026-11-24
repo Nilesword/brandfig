@@ -172,7 +172,7 @@ is untouched until the owner says to ship; nothing committed.
 ## SEO, second pass (2026-11-25)
 - Google had 0 pages on 24 Nov and lists 8 on 25 Nov (with the old titles; /concepts not yet). On 24 Nov Bing ranked the site first for "brandfig". Nothing on the site blocks Google.
 - Tool pages (`PAGES` in `build.py`): a plain search line above the headline inside the h1 ("Logo construction for Figma"),
-  How it works, example pages (Concepts, Guidelines; real template pages) and a FAQ that links between tools, with FAQPage data.
+  How it works and a FAQ (template-page slides were removed the same day: the owner found them boring) that links between tools, with FAQPage data.
   "What's inside" is now an h2. The stage name ("Create faster") no longer sits above tool headlines.
 - "Is it AI?" uses the owner's 24 Nov wording (no geometry).
 - Sitemap: legal pages keep their own date.
