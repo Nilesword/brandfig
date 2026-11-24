@@ -70,6 +70,61 @@ SEO = {
              'Export every logo version as AI, EPS, PDF, SVG, PNG and JPG in one zip from Figma, with a guidelines PDF and a Which file to use guide.'),
 }
 
+# ---------- tool pages: the line above the headline, steps, example pages and questions
+PAGES = {
+  'logo': {
+    'kicker': 'Logo construction for Figma',
+    'steps': [('Select your logo', 'Any vector logo on the canvas. Brandfig works from the paths you drew.'),
+              ('Draw construction', 'Choose Key lines, Balanced or Every line, then press Draw construction.'),
+              ('Keep designing', 'The construction lands as editable layers, and can redraw itself when the logo changes.')],
+    'faq': [('How do I make a logo construction grid in Figma?', 'Select the vector logo, open the Logo tool in Brandfig and press Draw construction. It draws lines, circles, anchors and handles from the logo’s paths, and you choose which parts to show.'),
+            ('What’s the difference between a base grid and a construction grid?', 'A base grid comes first: it’s what you sketch the logo on. Construction comes after: it shows the lines and circles behind the finished shape. The Logo tool makes both.'),
+            ('How is clear space measured?', 'By the cap height of the type, the width of the mark or a pixel value you set. Minimum sizes for screen and print sit beside it.'),
+            ('Does it work on any logo?', 'It works on vector logos. A PNG or JPG has no paths to measure, so use the vector version.'),
+            ('Where does the construction go next?', 'Use it in your <a href="/concepts/">concept deck</a>, your <a href="/guidelines/">brand guidelines</a> or a <a href="/bento/">bento grid</a>.')]},
+  'concepts': {
+    'kicker': 'Logo concept presentations for Figma',
+    'steps': [('Add your concepts', 'Up to six, each with its logos, colours and two fonts.'),
+              ('Pick a template', 'Six directions, from calm to loud. Your own frame can be the template too.'),
+              ('Build presentation', 'The pages are laid out in Figma. Edit anything, then present.')],
+    'shots': ('Pages from the templates', [('decks/northwind', 'Northwind'), ('decks/fieldwork-concept', 'Fieldwork'), ('decks/sundae-three-words', 'Sundae')], 'logo presentation template page'),
+    'faq': [('What goes into a logo presentation?', 'A cover, the brief, three words and references. Then, for each concept: an opener, the logo, versions, construction, colour, type, stationery, digital and in use. It closes with the concepts side by side and next steps.'),
+            ('How many concepts can I present?', 'You can add up to six. The templates are designed for one to four in a deck.'),
+            ('Can I edit the pages?', 'Yes. Every page is made of normal Figma layers, so you can change the words, images and layout.'),
+            ('What if a concept isn’t finished?', 'Pages that would be empty are skipped. Build again when you have more and the deck updates.'),
+            ('What happens after the client picks one?', 'Take the chosen direction into <a href="/guidelines/">brand guidelines</a>, then <a href="/export/">export the logo files</a>.')]},
+  'guidelines': {
+    'kicker': 'Brand guidelines for Figma',
+    'steps': [('Add brand assets', 'Your logo versions, colours with roles and type roles.'),
+              ('Pick a template', 'Twelve designs. Choose the pages you need and put them in order.'),
+              ('Build guidelines', 'The guide is laid out in Figma, ready to edit and save as a PDF.')],
+    'shots': ('Pages from the templates', [('guides/transit-contents', 'Transit'), ('guides/arcadia-palette', 'Arcadia'), ('guides/funhaus-typefaces', 'Funhaus')], 'brand guidelines template page'),
+    'faq': [('What should brand guidelines include?', 'The logo and its versions, clear space, minimum sizes, the colour palette, typefaces and how it all comes together. You choose which pages go in and add your own words.'),
+            ('How do I update the guidelines when the brand changes?', 'Change the asset and build again. Pages you lock stay as you left them.'),
+            ('Can I send them as a PDF?', 'Yes. Brandfig saves the guide as one PDF, and can add it to the zip when you <a href="/export/">export the logo files</a>.'),
+            ('Are colour values included?', 'Yes: HEX, RGB and CMYK. CMYK is a conversion, so check it with the printer before production.'),
+            ('Can I edit the templates?', 'Yes. The pages are normal Figma layers, so change anything you like.')]},
+  'bento': {
+    'kicker': 'Brand bento grids for Figma',
+    'steps': [('Select a frame', 'Any size or shape. The bento is built to fit it.'),
+              ('Choose a layout', 'Even, Feature or Brick, with 2 to 16 tiles. Set the gap and corners, or Shuffle.'),
+              ('Finish bento', 'Your logos, colours, type and construction go into the tiles.')],
+    'faq': [('What is a brand bento grid?', 'One frame split into tiles, each showing a part of the identity: the logo, colours, type, construction and more. It shows the whole brand at a glance.'),
+            ('What size can the bento be?', 'Any frame size: a slide, a square post, a portfolio cover. Select the frame and the grid fills it.'),
+            ('Where does the content come from?', 'From your brand assets or from one of your <a href="/concepts/">concepts</a>.'),
+            ('Can I change the tiles afterwards?', 'Yes. The tiles are normal Figma layers, so you can swap, resize or restyle them.')]},
+  'export': {
+    'kicker': 'Logo file export for Figma',
+    'steps': [('Add your logo versions', 'Mark, logotype, full logo or any version you’ve drawn.'),
+              ('Pick the files', 'Choose colour versions, formats and PNG sizes. The panel counts the files for you.'),
+              ('Export files', 'Everything is sorted into folders and saved as one zip.')],
+    'faq': [('Can I export AI and EPS files from Figma with Brandfig?', 'Yes. AI files are PDF-compatible and open as vectors in Illustrator. EPS files are made from the vector logo. Pictures and angular gradients can’t go in an EPS.'),
+            ('Which logo files should I give a client?', 'Vector files for print and design work (AI, EPS, PDF, SVG) and PNG or JPG for everyday screen use, in colour, reversed, black and white.'),
+            ('How will the client know which file to use?', 'Add the Which file to use PDF. It explains each format, size and colour version, the logo rules and where to find every file.'),
+            ('Which PNG sizes can I export?', 'Presets from 256 to 4096 px wide, and any custom width.'),
+            ('Can the brand guidelines go in the same zip?', 'Yes, as a PDF, along with a font list. Build them first with the <a href="/guidelines/">Guidelines tool</a>.')]},
+}
+
 def toolmenu(active=None):
     return ''.join(f'<a class="item{" on" if t[0] == active else ""}" href="/{t[0]}/"{" aria-current=\"page\"" if t[0] == active else ""}><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
 
@@ -163,7 +218,7 @@ BOTTOM = ['decks/northwind-colour', 'guides/funhaus-typefaces', 'decks/kestrel-b
   'guides/arcadia-palette', 'decks/basalt-type', 'decks/riot-club-next-steps', 'guides/transit-contents', 'decks/sundae-three-words', 'decks/basalt-thanks']
 
 FAQ = [
-  ('Is it AI?', 'No. Construction is geometry: Brandfig reads your logo’s anchor points and curves and draws from them. Decks and guides are templates filled with your own logos, colours and fonts.'),
+  ('Is it AI?', 'No. You bring the logo, colours and fonts, and you make every choice.'),
   ('How does the free trial work?', 'Every tool is unlocked for 3 days. You add a card at checkout but nothing is charged until day 3; cancel before then and you won’t be charged at all.'),
   ('How does the subscription work?', 'Pro is billed monthly ($7) or yearly ($56, saving 33%) and renews automatically. Cancel anytime from the link in your receipt email; Pro keeps working until the end of the period you’ve paid for.'),
   ('How do I activate it?', 'Your license key arrives by email. Open Brandfig in Figma, paste the key and press Activate.'),
@@ -188,15 +243,19 @@ APP = {
   'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/', 'logo': SITE + '/img/apple-touch-icon.png', 'email': 'contact@getbrandfig.com',
                 'sameAs': [FIGMA, 'https://www.instagram.com/getbrandfig/', 'https://www.threads.net/@getbrandfig']},
 }
+def faq_ld(items):
+    return {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub('<[^>]+>', '', a)}} for q, a in items]}
+def faq_html(items):
+    return '<div class="faq">' + ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in items) + '</div>'
 def home_ld():
-    faq = {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub('<[^>]+>', '', a)}} for q, a in FAQ]}
+    faq = faq_ld(FAQ)
     site = {'@type': 'WebSite', 'name': 'Brandfig', 'url': SITE + '/'}
     return ldjson({'@context': 'https://schema.org', '@graph': [site, APP, faq]})
 def tool_ld(key, name):
     crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
         {'@type': 'ListItem', 'position': 2, 'name': name, 'item': f'{SITE}/{key}/'}]}
-    return ldjson({'@context': 'https://schema.org', '@graph': [crumbs]})
+    return ldjson({'@context': 'https://schema.org', '@graph': [crumbs, faq_ld(PAGES[key]['faq'])]})
 
 def home():
     tabs = ''.join(
@@ -204,7 +263,7 @@ def home():
         f'<span class="name">{icon(t[6])}{t[1]}</span><span class="more">{t[4]}<a href="/{t[0]}/">See the {t[1]} tool</a></span></button>'
         for t in TOOLS)
     picks = ''.join(f'<span class="{"on" if t[0] == "concepts" else ""}"><i>{icon(t[6], "#0A0A0C" if t[0] == "concepts" else "#EDEDEA")}</i>{t[1]}</span>' for t in TOOLS)
-    faq = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)
+    faq = faq_html(FAQ)
     return head(*SEO['/'], '/', home_ld()) + f'''
 <section class="stage" aria-label="Pages Brandfig builds from its deck and guideline templates">
   <div class="rows"></div>
@@ -244,7 +303,7 @@ def home():
 
 <section class="block wrap" id="faq">
   <div class="head"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
-  <div class="faq">{faq}</div>
+  {faq}
 </section>
 ''' + FOOTER + SCRIPT + f'''
 // Hero: two rows of real template pages flow out from behind the panel (two copies each: a seamless loop at -50%)
@@ -266,18 +325,32 @@ document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', (
 
 def tool(t):
     key, name, stage, h1, _, sub, ic, cards = t
+    p = PAGES[key]
+    shots = ''
+    if 'shots' in p:
+        title, pics, what = p['shots']
+        shots = (f'<section class="block wrap">\n  <div class="head"><h2>{title}</h2></div>\n  <div class="shots">'
+                 + ''.join(f'<img src="/img/{f}.webp" width="960" height="540" alt="{n} {what}" loading="lazy">' for f, n in pics) + '</div>\n</section>\n')
+    steps = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in p['steps'])
     cards_html = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in cards)
     return head(*SEO[key], f'/{key}/', tool_ld(key, name)) + f'''
 <section class="tool-hero wrap">
-  <p class="eyebrow">{stage} · {name}</p>
-  <h1>{h1}</h1>
+  <h1><span class="eyebrow">{p['kicker']}</span> {h1}</h1>
   <p class="lead">{sub}</p>
   {BUTTONS}
   {loop(key, f'{name} tool at work')}
 </section>
 <section class="block wrap">
-  <div class="head"><p class="eyebrow">What’s inside</p></div>
+  <div class="head"><h2>What’s inside</h2></div>
   <div class="cards">{cards_html}</div>
+</section>
+<section class="block wrap">
+  <div class="head"><h2>How it works</h2></div>
+  <div class="cards">{steps}</div>
+</section>
+{shots}<section class="block wrap">
+  <div class="head"><h2>Questions, answered.</h2></div>
+  {faq_html(p['faq'])}
 </section>
 ''' + FOOTER + SCRIPT + TAIL
 
@@ -289,9 +362,10 @@ if __name__ == '__main__':
         open(f'{t[0]}/index.html', 'w', encoding='utf-8').write(tool(t))
     import datetime
     today = datetime.date.today().isoformat()
+    LEGAL_DATE = '2026-10-29'   # last time the legal pages changed
     urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + ['/terms.html', '/privacy.html', '/refund.html']
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sm += [f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod></url>' for u in urls] + ['</urlset>', '']
+    sm += [f'  <url><loc>{SITE}{u}</loc><lastmod>{LEGAL_DATE if u.endswith('.html') else today}</lastmod></url>' for u in urls] + ['</urlset>', '']
     open('sitemap.xml', 'w', encoding='utf-8').write(chr(10).join(sm))
     open('robots.txt', 'w', encoding='utf-8').write(chr(10).join(['User-agent: *', 'Allow: /', 'Disallow: /notes/', '', f'Sitemap: {SITE}/sitemap.xml', '']))
     print('built: index.html, ' + ', '.join(f'{t[0]}/' for t in TOOLS))

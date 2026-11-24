@@ -168,3 +168,13 @@ is untouched until the owner says to ship; nothing committed.
 - Key file `8291206bcc9476f90046d8dd5e8ef3a7.txt` at the root (keep it). After any deploy that adds or changes pages, run
   `python notes/indexnow.py`: it sends every URL in `sitemap.xml` to Bing, Yandex, Seznam and Naver via api.indexnow.org.
 - First submission 2026-11-23: 202 Accepted, 9 URLs.
+
+## SEO, second pass (2026-11-25)
+- Google had 0 pages on 24 Nov and lists 8 on 25 Nov (with the old titles; /concepts not yet). On 24 Nov Bing ranked the site first for "brandfig". Nothing on the site blocks Google.
+- Tool pages (`PAGES` in `build.py`): a plain search line above the headline inside the h1 ("Logo construction for Figma"),
+  How it works, example pages (Concepts, Guidelines; real template pages) and a FAQ that links between tools, with FAQPage data.
+  "What's inside" is now an h2. The stage name ("Create faster") no longer sits above tool headlines.
+- "Is it AI?" uses the owner's 24 Nov wording (no geometry).
+- Sitemap: legal pages keep their own date.
+- Search Console "video indexing" notices (owner saw 5, reason not checked yet): the loops illustrate the pages and aren't
+  their main content. Video indexing is separate from page indexing. Don't add VideoObject just to clear them.
