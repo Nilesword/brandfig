@@ -116,7 +116,7 @@ PAGES = {
     'steps': [('Add your logo versions', 'Mark, logotype, full logo or any version you’ve drawn.'),
               ('Pick the files', 'Choose colour versions, formats and PNG sizes. The panel counts the files for you.'),
               ('Export files', 'Everything is sorted into folders and saved as one zip.')],
-    'faq': [('Can I export AI and EPS files from Figma with Brandfig?', 'Yes. AI files are PDF-compatible and open as vectors in Illustrator. EPS files are made from the vector logo. Pictures and angular gradients can’t go in an EPS.'),
+    'faq': [('Can I export AI and EPS files from Figma with Brandfig?', 'Yes. AI files are PDF-compatible and open as vectors in Illustrator. EPS files are made from the vector logo. Pictures and angular gradients can’t go in an EPS. Read the <a href="/guides/export-logo-files-from-figma/">logo export guide</a> for every format.'),
             ('Which logo files should I give a client?', 'Vector files for print and design work (AI, EPS, PDF, SVG) and PNG or JPG for everyday screen use, in colour, reversed, black and white.'),
             ('How will the client know which file to use?', 'Add the Which file to use PDF. It explains each format, size and colour version, the logo rules and where to find every file.'),
             ('Which PNG sizes can I export?', 'Presets from 256 to 4096 px wide, and any custom width.'),
@@ -127,7 +127,7 @@ def toolmenu(active=None):
     return ''.join(f'<a class="item{" on" if t[0] == active else ""}" href="/{t[0]}/"{" aria-current=\"page\"" if t[0] == active else ""}><span class="ic">{icon(t[6])}</span><span><b>{t[1]}</b><small>{t[4]}</small></span></a>' for t in TOOLS)
 
 def head(title, desc, path='/', ld=''):
-    active = path.strip('/') or None
+    active = path.strip('/') if path.strip('/') in SEO else None
     TOOLMENU = toolmenu(active)
     return f'''<!doctype html>
 <html lang="en">
@@ -179,7 +179,7 @@ FOOTER = f'''<footer class="footer wrap">
   <div class="cols">
     <div class="brand"><img src="/img/wordmark.svg" alt="Brandfig"><p>Automation for brand designers, inside Figma.</p><a href="mailto:contact@getbrandfig.com">contact@getbrandfig.com</a></div>
     <div><h4>Tools</h4>{''.join(f'<a href="/{t[0]}/">{t[1]}</a>' for t in TOOLS)}</div>
-    <div><h4>Product</h4><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="{FIGMA}">Figma Community</a></div>
+    <div><h4>Product</h4><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="{FIGMA}">Figma Community</a><a href="/guides/export-logo-files-from-figma/">Logo export guide</a></div>
     <div><h4>Follow</h4><a href="https://www.instagram.com/getbrandfig/">Instagram</a><a href="https://www.threads.net/@getbrandfig">Threads</a></div>
     <div><h4>Legal</h4><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/refund.html">Refunds</a></div>
   </div>
@@ -324,11 +324,6 @@ document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', (
 def tool(t):
     key, name, stage, h1, _, sub, ic, cards = t
     p = PAGES[key]
-    shots = ''
-    if 'shots' in p:
-        title, pics, what = p['shots']
-        shots = (f'<section class="block wrap">\n  <div class="head"><h2>{title}</h2></div>\n  <div class="shots">'
-                 + ''.join(f'<img src="/img/{f}.webp" width="960" height="540" alt="{n} {what}" loading="lazy">' for f, n in pics) + '</div>\n</section>\n')
     steps = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in p['steps'])
     cards_html = ''.join(f'<div class="card"><h3>{a}</h3><p>{b}</p></div>' for a, b in cards)
     return head(*SEO[key], f'/{key}/', tool_ld(key, name)) + f'''
@@ -346,10 +341,108 @@ def tool(t):
   <div class="head"><h2>How it works</h2></div>
   <div class="cards">{steps}</div>
 </section>
-{shots}<section class="block wrap">
+<section class="block wrap">
   <div class="head"><h2>Questions, answered.</h2></div>
   {faq_html(p['faq'])}
 </section>
+''' + FOOTER + SCRIPT + TAIL
+
+# ---------- guides: plain answers to what designers search for
+GUIDES = [{
+  'slug': 'export-logo-files-from-figma',
+  'short': 'Export logo files from Figma',
+  'title': 'How to export logo files from Figma, with AI and EPS · Brandfig',
+  'desc': 'Export a logo from Figma as PNG, JPG, SVG and PDF, make AI and EPS files for print, and pick the right logo file for every job.',
+  'h1': 'How to export logo files from Figma, including AI and EPS',
+  'lead': 'Figma exports PNG, JPG, SVG and PDF. For AI and EPS, take the vector into Illustrator, or use a plugin that makes both inside Figma.',
+  'published': '2026-11-25', 'modified': '2026-11-25',
+  'body': '''
+<h2>Get the logo ready</h2>
+<p>A few minutes here saves a second export later.</p>
+<ul>
+  <li><b>Keep it vector.</b> If any part of the logo is an image, it stays pixels in every file.</li>
+  <li><b>Outline the type and strokes.</b> Work on a copy, so the editable logo stays in your file. Outlined type looks the same on every computer.</li>
+  <li><b>Clean the shape.</b> Remove hidden layers and stray points, and leave no background behind the logo.</li>
+  <li><b>Name each version.</b> Mark, Logotype, Full logo. Figma uses the layer name as the file name.</li>
+</ul>
+
+<h2>Export PNG, JPG, SVG and PDF in Figma</h2>
+<ol>
+  <li>Select the logo version, not the page it sits on.</li>
+  <li>In the right panel, find Export and press the plus.</li>
+  <li>Choose the format. Add a row for each one you need.</li>
+  <li>For PNG and JPG, type a width such as <b>1024w</b>. SVG and PDF export at 1x, because vectors scale to any size.</li>
+  <li>For SVG, open the export settings and keep Outline text on.</li>
+  <li>Press Export.</li>
+</ol>
+<p>PNG and SVG keep a transparent background. JPG doesn’t, so place the logo on the background colour you want first.</p>
+
+<h2>Make an AI file</h2>
+<p>Figma has no AI export. In Illustrator:</p>
+<ol>
+  <li>Export the logo from Figma as SVG or PDF.</li>
+  <li>Open that file in Illustrator and release any clipping masks you don’t need.</li>
+  <li>Check the colours and the shape against the original.</li>
+  <li>Choose File, Save As, Adobe Illustrator (AI), with Create PDF Compatible File on.</li>
+</ol>
+
+<h2>Make an EPS file</h2>
+<p>Printers, sign makers and embroidery shops often ask for EPS. With the logo open in Illustrator, choose File, Save As, Illustrator EPS. EPS doesn’t keep see-through effects, so use solid colours and shapes.</p>
+
+<h2>Export AI and EPS inside Figma</h2>
+<p>The <a href="/export/">Export tool in Brandfig</a> makes all six formats from the logo versions in your file. Pick the colour versions, the formats and the PNG sizes, and it saves one zip, sorted into folders.</p>
+{loop}
+<p>The AI files are PDF-compatible and open as vectors in Illustrator. The EPS files are made from the vector logo. Pictures and angular gradients can’t go in an EPS.</p>
+
+<h2>Which logo file for which job</h2>
+<table>
+  <thead><tr><th>Job</th><th>Best file</th><th>Also works</th></tr></thead>
+  <tbody>
+    <tr><td>Website and apps</td><td>SVG</td><td>PNG</td></tr>
+    <tr><td>Social posts and profile pictures</td><td>PNG, 1024 px or wider</td><td>JPG</td></tr>
+    <tr><td>Slides and documents</td><td>PNG, 1024 px or wider</td><td>JPG</td></tr>
+    <tr><td>Email signature</td><td>PNG</td><td>JPG</td></tr>
+    <tr><td>Print: cards, flyers, posters</td><td>PDF</td><td>AI, EPS</td></tr>
+    <tr><td>Signs, merch, embroidery, vinyl</td><td>EPS</td><td>AI, PDF</td></tr>
+    <tr><td>Another designer</td><td>AI</td><td>SVG, PDF</td></tr>
+  </tbody>
+</table>
+
+<h2>What to put in a client’s logo package</h2>
+<ul>
+  <li><b>Every version.</b> The full logo, the mark and the logotype.</li>
+  <li><b>Every colour it needs.</b> Full colour, reversed, black and white. Grey helps for single-ink jobs.</li>
+  <li><b>Vector and pixel files.</b> AI, EPS, PDF and SVG, with PNG in a few widths.</li>
+  <li><b>Clear names.</b> Brand, version, colour, size: <b>Northwind-Mark-Black-1024px.png</b>.</li>
+  <li><b>A short guide.</b> One page that says which file to use where, next to the <a href="/guidelines/">brand guidelines</a>.</li>
+</ul>
+<p>Colour on screen is RGB and print is CMYK, so agree the CMYK values with the printer and ask for a proof before a big run.</p>
+''',
+  'faq': [
+    ('Can Figma export AI files?', 'No. Figma exports PNG, JPG, SVG and PDF. Open the SVG or PDF in Illustrator and save it as AI, or use a plugin such as <a href="/export/">Brandfig</a> that saves AI files from Figma.'),
+    ('Can Figma export EPS files?', 'No. Save the EPS from Illustrator, or make it in Figma with a plugin such as <a href="/export/">Brandfig</a>.'),
+    ('Is SVG or PNG better for a logo?', 'SVG for websites and apps, because it stays sharp at any size. PNG wherever SVG isn’t accepted, such as documents and social media.'),
+    ('What size should a PNG logo be?', 'At least as wide as it will show, and twice that for sharp phone and laptop screens. 512, 1024 and 2048 px cover most uses.'),
+    ('Why does the font change when a client opens the logo?', 'The type is still live text and the client doesn’t have the font. Outline the type before you export.'),
+  ],
+}]
+def guide(g):
+    url = f"{SITE}/guides/{g['slug']}/"
+    crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
+        {'@type': 'ListItem', 'position': 2, 'name': g['short'], 'item': url}]}
+    art = {'@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'image': SITE + '/img/og.jpg', 'mainEntityOfPage': url,
+           'datePublished': g['published'], 'dateModified': g['modified'],
+           'author': {'@type': 'Person', 'name': 'Nilesh Shukla'}, 'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/'}}
+    ld = ldjson({'@context': 'https://schema.org', '@graph': [art, crumbs, faq_ld(g['faq'])]})
+    return head(g['title'], g['desc'], f"/guides/{g['slug']}/", ld) + f'''
+<article class="article wrap">
+  <h1><span class="eyebrow">Guide</span> {g['h1']}</h1>
+  <p class="lead">{g['lead']}</p>
+  {g['body'].replace('{loop}', loop('export', 'Export tool at work'))}
+  <h2>Questions, answered.</h2>
+  {faq_html(g['faq'])}
+</article>
 ''' + FOOTER + SCRIPT + TAIL
 
 if __name__ == '__main__':
@@ -358,10 +451,13 @@ if __name__ == '__main__':
     for t in TOOLS:
         os.makedirs(t[0], exist_ok=True)
         open(f'{t[0]}/index.html', 'w', encoding='utf-8').write(tool(t))
+    for g in GUIDES:
+        os.makedirs(f"guides/{g['slug']}", exist_ok=True)
+        open(f"guides/{g['slug']}/index.html", 'w', encoding='utf-8').write(guide(g))
     import datetime
     today = datetime.date.today().isoformat()
     LEGAL_DATE = '2026-10-29'   # last time the legal pages changed
-    urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + ['/terms.html', '/privacy.html', '/refund.html']
+    urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + [f"/guides/{g['slug']}/" for g in GUIDES] + ['/terms.html', '/privacy.html', '/refund.html']
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f'  <url><loc>{SITE}{u}</loc><lastmod>{LEGAL_DATE if u.endswith('.html') else today}</lastmod></url>' for u in urls] + ['</urlset>', '']
     open('sitemap.xml', 'w', encoding='utf-8').write(chr(10).join(sm))

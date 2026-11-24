@@ -178,3 +178,12 @@ is untouched until the owner says to ship; nothing committed.
 - Sitemap: legal pages keep their own date.
 - Search Console "video indexing" notices (owner saw 5, reason not checked yet): the loops illustrate the pages and aren't
   their main content. Video indexing is separate from page indexing. Don't add VideoObject just to clear them.
+
+## Guides (2026-11-25)
+- Search guides live in `GUIDES` in `build.py`, built to `guides/<slug>/` with Article, breadcrumb and FAQ data. First one:
+  `guides/export-logo-files-from-figma/`, linked from the footer (Product column) and the Export page FAQ.
+- Figma facts checked against help.figma.com (PNG, JPG, SVG, PDF only; SVG and PDF at 1x; text outlined in SVG by default).
+- No template slides on tool pages: the owner decided the videos are enough. Search Console's video notice is
+  "Video isn't on a watch page": harmless, don't press Validate Fix.
+- Plan: 5 guides, not a blog (no schedule). Next: logo construction grid; clear space and minimum size; brand guidelines
+  checklist; presenting logo concepts. Add a `/guides/` list page and a footer "Guides" link when the second one ships.
