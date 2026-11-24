@@ -198,3 +198,5 @@ is untouched until the owner says to ship; nothing committed.
   wording, order, examples, figures or pitches. No made-up experience claims.
 - Guide pictures: `img/articles/`, all ET Robotics. Logo versions and colours are cropped from the real Logo pack (lab file 987:104); guideline pages
   from the film guide (brandfig-video/assets/features/et-guide-4..6); clear-space.svg is drawn with the plugin's drawClearSpace() measurements.
+- Guide covers: 1:1, drawn by `notes/covers.py`. Rules, list and how to add one: `notes/GUIDE-COVERS.md`.
+- Categories: `cat` on each guide, order in `CATS`; a category shows once it has a guide. Filter on /guides/, linkable (`/guides/#logo-files`).

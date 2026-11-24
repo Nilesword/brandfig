@@ -350,6 +350,7 @@ def tool(t):
 # ---------- guides: plain answers to what designers search for
 GUIDES = [{
   'tool': 'export',
+  'cat': 'Logo files',
   'slug': 'export-logo-files-from-figma',
   'short': 'Export logo files from Figma',
   'title': 'How to export logo files from Figma, with AI and EPS · Brandfig',
@@ -422,6 +423,7 @@ GUIDES = [{
   ],
 }, {
   'tool': 'logo',
+  'cat': 'Logo design',
   'slug': 'logo-construction-grid-in-figma',
   'short': 'Logo construction grid in Figma',
   'title': 'How to make a logo construction grid in Figma · Brandfig',
@@ -495,6 +497,7 @@ GUIDES = [{
   ],
 }, {
   'tool': 'export',
+  'cat': 'Logo files',
   'slug': 'client-logo-package',
   'short': 'Client logo package',
   'title': 'What to include in a client’s logo package · Brandfig',
@@ -598,6 +601,7 @@ GUIDES = [{
   ],
 }, {
   'tool': 'logo',
+  'cat': 'Logo design',
   'slug': 'logo-clear-space-and-minimum-size',
   'short': 'Logo clear space and minimum size',
   'title': 'Logo clear space and minimum size, in Figma · Brandfig',
@@ -677,6 +681,7 @@ GUIDES = [{
   ],
 }, {
   'tool': 'guidelines',
+  'cat': 'Brand guidelines',
   'slug': 'what-to-include-in-brand-guidelines',
   'short': 'What to include in brand guidelines',
   'title': 'What to include in brand guidelines: a checklist · Brandfig',
@@ -772,12 +777,16 @@ GUIDES = [{
     ('How often should brand guidelines be updated?', 'Whenever the logo, colours or type change, or when people keep asking the same question.'),
   ],
 }]
+CATS = ['Logo design', 'Logo presentations', 'Brand guidelines', 'Bento grids', 'Logo files']   # shown once it has a guide
+def cat_id(c): return c.lower().replace(' ', '-')
 def guide_card(g, tag='h2'):
-    return f'<a class="card" href="/guides/{g["slug"]}/"><{tag}>{g["h1"]}</{tag}><p>{g["desc"]}</p></a>'
+    return f'<a class="card" data-cat="{cat_id(g["cat"])}" href="/guides/{g["slug"]}/"><img src="/img/covers/{g["slug"]}.webp" width="1200" height="1200" alt="" loading="lazy"><span class="cat">{g["cat"]}</span><{tag}>{g["h1"]}</{tag}><p>{g["desc"]}</p></a>'
 def guides_index():
     title = 'Logo and brand design guides for Figma · Brandfig'
     desc = 'Practical guides for logo and brand designers working in Figma: construction grids, clear space, brand guidelines and logo files.'
-    items = ''.join(guide_card(g) for g in GUIDES)
+    used = [c for c in CATS if any(g['cat'] == c for g in GUIDES)]
+    items = ''.join(guide_card(g) for c in used for g in GUIDES if g['cat'] == c)
+    tabs = '<button type="button" data-f="" aria-pressed="true">All</button>' + ''.join(f'<button type="button" data-f="{cat_id(c)}" aria-pressed="false">{c}</button>' for c in used)
     crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
         {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'}]}
@@ -785,7 +794,22 @@ def guides_index():
 <section class="tool-hero wrap">
   <h1><span class="eyebrow">Guides</span> Logo and brand design in Figma.</h1>
 </section>
-<section class="guides wrap">{items}</section>
+<section class="wrap library">
+  <div class="filter" role="group" aria-label="Category">{tabs}</div>
+  <div class="guides">{items}</div>
+</section>
+<script>
+// Category filter; the address keeps the choice (/guides/#logo-files)
+const tabs = [...document.querySelectorAll('.filter button')];
+function pick(f) {{
+  if (!tabs.some(b => b.dataset.f === f)) f = '';
+  tabs.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
+  document.querySelectorAll('.guides .card').forEach(c => {{ c.hidden = f && c.dataset.cat !== f; }});
+}}
+tabs.forEach(b => b.addEventListener('click', () => {{ pick(b.dataset.f); history.replaceState(null, '', b.dataset.f ? '#' + b.dataset.f : location.pathname); }}));
+addEventListener('hashchange', () => pick(location.hash.slice(1)));
+pick(location.hash.slice(1));
+</script>
 ''' + FOOTER + SCRIPT + TAIL
 def guide(g):
     url = f"{SITE}/guides/{g['slug']}/"
@@ -793,22 +817,23 @@ def guide(g):
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
         {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'},
         {'@type': 'ListItem', 'position': 3, 'name': g['short'], 'item': url}]}
-    # two others: the same tool first
-    more = ''.join(guide_card(o, 'h3') for o in sorted((o for o in GUIDES if o is not g), key=lambda o: o['tool'] != g['tool'])[:2])
-    art = {'@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'image': SITE + '/img/og.jpg', 'mainEntityOfPage': url,
+    # three others: the same tool first
+    more = ''.join(guide_card(o, 'h3') for o in sorted((o for o in GUIDES if o is not g), key=lambda o: o['tool'] != g['tool'])[:3])
+    art = {'@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'image': f"{SITE}/img/covers/{g['slug']}.jpg", 'mainEntityOfPage': url,
            'datePublished': g['published'], 'dateModified': g['modified'],
            'author': {'@type': 'Person', 'name': 'Nilesh Shukla'}, 'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/'}}
     ld = ldjson({'@context': 'https://schema.org', '@graph': [art, crumbs, faq_ld(g['faq'])]})
-    return head(g['title'], g['desc'], f"/guides/{g['slug']}/", ld) + f'''
+    return head(g['title'], g['desc'], f"/guides/{g['slug']}/", ld).replace(SITE + '/img/og.jpg', f"{SITE}/img/covers/{g['slug']}.jpg") + f'''
 <article class="article wrap">
-  <a class="eyebrow" href="/guides/">Guides</a>
+  <a class="eyebrow" href="/guides/#{cat_id(g['cat'])}">{g['cat']}</a>
   <h1>{g['h1']}</h1>
   <p class="lead">{g['lead']}</p>
+  <img class="cover" src="/img/covers/{g['slug']}.webp" width="1200" height="1200" alt="{g['short']}">
   {g['body'].replace('{loop}', loop(g['tool'], g['tool'].title() + ' tool at work'))}
   <h2>Questions, answered.</h2>
   {faq_html(g['faq'])}
 </article>
-<section class="block wrap">
+<section class="block wrap library">
   <div class="head"><h2>More guides</h2></div>
   <div class="guides">{more}</div>
 </section>

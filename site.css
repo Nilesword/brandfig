@@ -164,9 +164,23 @@ section.block { padding-top: 160px; }
 .article > .eyebrow { display: inline-block; margin-bottom: 20px; }
 .article > .eyebrow:hover { color: var(--text); }
 .guides { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 64px; }
-.guides .card { gap: 16px; }
+.guides .card { gap: 16px; padding: 0 0 32px; overflow: hidden; align-content: start; }
+.guides .card > * { margin-inline: 32px; }
+.guides .card img { width: 100%; height: auto; margin: 0 0 12px; display: block; }
+.article .cover { display: block; width: 100%; height: auto; border-radius: 12px; margin: 40px 0; }
 .guides .card:hover { background: var(--raised); }
 .block .guides { padding-top: 0; }
+.guides .card[hidden] { display: none; }
+.guides .cat { color: var(--quiet); font-size: 15px; }
+.library:not(.block) { padding-top: 64px; }
+.library .guides { padding-top: 40px; grid-template-columns: repeat(3, 1fr); }
+.library .guides h2, .library .guides h3 { font-size: 22px; }
+.library .guides .card > * { margin-inline: 24px; }
+.library .guides .card img { margin: 0 0 8px; }
+.block.library .guides { padding-top: 0; }
+.filter { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.filter button { background: none; border: 0; padding: 6px 0; font: inherit; font-weight: 500; font-size: 17px; color: var(--quiet); cursor: pointer; }
+.filter button:hover, .filter button[aria-pressed="true"] { color: #fff; }
 .guides h2, .guides h3 { font-size: 28px; line-height: 1.15; }
 .article .lead { font-size: 20px; margin-top: 28px; max-width: none; color: var(--text); }
 .article h2 { font-size: 32px; margin: 80px 0 20px; }
@@ -194,7 +208,7 @@ section.block { padding-top: 160px; }
   .show { grid-template-columns: 1fr; }
   .tabs { grid-template-columns: repeat(5, auto); overflow-x: auto; gap: 4px; }
   .tab { padding: 12px 14px; } .tab .name { font-size: 16px; } .tab .more { display: none !important; }
-  .steps, .plans, .guides { grid-template-columns: 1fr; }
+  .steps, .plans, .guides, .library .guides { grid-template-columns: 1fr; }
   .cols { grid-template-columns: 1fr 1fr; }
   .cols .brand { grid-column: 1 / -1; }
 }
