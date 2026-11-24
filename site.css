@@ -19,7 +19,7 @@ img, video { display: block; max-width: 100%; }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; transition: padding .2s; }
 .bar.scrolled .nav { padding: 12px 0; }
 .nav .links a, .nav .links summary { color: #b4b4ba; transition: color .15s; }
-.nav .links a:hover, .nav .links summary:hover, .nav .links summary.here, .menu[open] > summary { color: #fff; }
+.nav .links a:hover, .nav .links summary:hover, .nav .links summary.here, .nav .links a.here, .menu[open] > summary { color: #fff; }
 .nav .links .drop a, .burger .drop a { color: var(--text); }
 .drop .item.on { background: #2a2a30; }
 .drop .item.on .ic { background: #383840; }
@@ -161,7 +161,12 @@ section.block { padding-top: 160px; }
 /* guides: one reading column */
 .article { padding-top: 96px; max-width: 760px; }
 .article h1 { font-size: 56px; line-height: 1.04; }
-.article h1 .eyebrow { display: block; line-height: 1.5; margin-bottom: 20px; }
+.article > .eyebrow { display: inline-block; margin-bottom: 20px; }
+.article > .eyebrow:hover { color: var(--text); }
+.guides { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 64px; }
+.guides .card { gap: 16px; }
+.guides .card:hover { background: var(--raised); }
+.guides h2 { font-size: 28px; line-height: 1.15; }
 .article .lead { font-size: 20px; margin-top: 28px; max-width: none; color: var(--text); }
 .article h2 { font-size: 32px; margin: 80px 0 20px; }
 .article p, .article li, .article td { font-size: 17px; line-height: 1.6; color: #b4b4ba; }
@@ -181,7 +186,7 @@ section.block { padding-top: 160px; }
   .show { grid-template-columns: 1fr; }
   .tabs { grid-template-columns: repeat(5, auto); overflow-x: auto; gap: 4px; }
   .tab { padding: 12px 14px; } .tab .name { font-size: 16px; } .tab .more { display: none !important; }
-  .steps, .plans { grid-template-columns: 1fr; }
+  .steps, .plans, .guides { grid-template-columns: 1fr; }
   .cols { grid-template-columns: 1fr 1fr; }
   .cols .brand { grid-column: 1 / -1; }
 }

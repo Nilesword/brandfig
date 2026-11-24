@@ -78,7 +78,7 @@ PAGES = {
               ('Draw construction', 'Choose Key lines, Balanced or Every line, then press Draw construction.'),
               ('Keep designing', 'The construction lands as editable layers, and can redraw itself when the logo changes.')],
     'faq': [('How do I make a logo construction grid in Figma?', 'Select the vector logo, open the Logo tool in Brandfig and press Draw construction. It draws lines, circles, anchors and handles from the logo’s paths, and you choose which parts to show.'),
-            ('What’s the difference between a base grid and a construction grid?', 'A base grid comes first: it’s what you sketch the logo on. Construction comes after: it shows the lines and circles behind the finished shape. The Logo tool makes both.'),
+            ('What’s the difference between a base grid and a construction grid?', 'A base grid comes first: it’s what you sketch the logo on. Construction comes after: it shows the lines and circles behind the finished shape. The Logo tool makes both. Read the <a href="/guides/logo-construction-grid-in-figma/">logo construction guide</a>.'),
             ('How is clear space measured?', 'By the cap height of the type, the width of the mark or a pixel value you set. Minimum sizes for screen and print sit beside it.'),
             ('Does it work on any logo?', 'It works on vector logos. A PNG or JPG has no paths to measure, so use the vector version.'),
             ('Where does the construction go next?', 'Use it in your <a href="/concepts/">concept deck</a>, your <a href="/guidelines/">brand guidelines</a> or a <a href="/bento/">bento grid</a>.')]},
@@ -161,12 +161,12 @@ def head(title, desc, path='/', ld=''):
   <div class="links">
     <details class="menu"><summary{' class="here"' if active else ''}>Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
       <div class="drop">{TOOLMENU}</div></details>
-    <a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a>
+    <a href="/#pricing">Pricing</a><a href="/guides/"{' class="here"' if path.startswith("/guides/") else ""}>Guides</a><a href="/#faq">FAQ</a>
   </div>
   <div class="right">
     <a class="btn primary" href="{MONTHLY}">Try free for 3 days</a>
     <details class="menu burger"><summary aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-      <div class="drop">{TOOLMENU}<a class="plain" href="/#pricing">Pricing</a><a class="plain" href="/#faq">FAQ</a></div></details>
+      <div class="drop">{TOOLMENU}<a class="plain" href="/#pricing">Pricing</a><a class="plain" href="/guides/">Guides</a><a class="plain" href="/#faq">FAQ</a></div></details>
   </div>
 </nav></header>
 '''
@@ -179,7 +179,7 @@ FOOTER = f'''<footer class="footer wrap">
   <div class="cols">
     <div class="brand"><img src="/img/wordmark.svg" alt="Brandfig"><p>Automation for brand designers, inside Figma.</p><a href="mailto:contact@getbrandfig.com">contact@getbrandfig.com</a></div>
     <div><h4>Tools</h4>{''.join(f'<a href="/{t[0]}/">{t[1]}</a>' for t in TOOLS)}</div>
-    <div><h4>Product</h4><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="{FIGMA}">Figma Community</a><a href="/guides/export-logo-files-from-figma/">Logo export guide</a></div>
+    <div><h4>Product</h4><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="{FIGMA}">Figma Community</a><a href="/guides/">Guides</a></div>
     <div><h4>Follow</h4><a href="https://www.instagram.com/getbrandfig/">Instagram</a><a href="https://www.threads.net/@getbrandfig">Threads</a></div>
     <div><h4>Legal</h4><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/refund.html">Refunds</a></div>
   </div>
@@ -349,6 +349,7 @@ def tool(t):
 
 # ---------- guides: plain answers to what designers search for
 GUIDES = [{
+  'tool': 'export',
   'slug': 'export-logo-files-from-figma',
   'short': 'Export logo files from Figma',
   'title': 'How to export logo files from Figma, with AI and EPS · Brandfig',
@@ -425,21 +426,109 @@ GUIDES = [{
     ('What size should a PNG logo be?', 'At least as wide as it will show, and twice that for sharp phone and laptop screens. 512, 1024 and 2048 px cover most uses.'),
     ('Why does the font change when a client opens the logo?', 'The type is still live text and the client doesn’t have the font. Outline the type before you export.'),
   ],
+}, {
+  'tool': 'logo',
+  'slug': 'logo-construction-grid-in-figma',
+  'short': 'Logo construction grid in Figma',
+  'title': 'How to make a logo construction grid in Figma · Brandfig',
+  'desc': 'Draw a logo construction grid in Figma: pick a base grid, add the lines and circles behind the shape, and present it clearly.',
+  'h1': 'How to make a logo construction grid in Figma',
+  'lead': 'Outline the logo, draw a line along each key edge, and fit a circle to each true curve. Keep only the lines that explain the shape.',
+  'published': '2026-11-25', 'modified': '2026-11-25',
+  'body': '''
+<h2>Base grid or construction grid</h2>
+<p>They get mixed up, but they do different jobs.</p>
+<ul>
+  <li><b>Base grid.</b> Comes first. You sketch the logo on it, so sizes and angles stay consistent.</li>
+  <li><b>Construction grid.</b> Comes after. It shows the lines, circles and alignments in the finished logo.</li>
+</ul>
+<p>You can use one without the other. A logo drawn freely can still have a clear construction.</p>
+
+<h2>Pick a base grid</h2>
+<table>
+  <thead><tr><th>Grid</th><th>Good for</th></tr></thead>
+  <tbody>
+    <tr><td>Square</td><td>Letters, blocky marks and icons</td></tr>
+    <tr><td>Triangle</td><td>Faceted marks and 60° angles</td></tr>
+    <tr><td>Isometric</td><td>Cubes and marks with depth</td></tr>
+    <tr><td>Hexagon</td><td>Cells, badges and six-sided marks</td></tr>
+    <tr><td>Circular</td><td>Rings, arcs and round marks</td></tr>
+    <tr><td>Radial</td><td>Blades, petals and anything that turns around a centre</td></tr>
+    <tr><td>Golden ratio</td><td>Testing proportion, when it suits the idea</td></tr>
+  </tbody>
+</table>
+
+<h2>Draw the construction in Figma</h2>
+<ol>
+  <li>Duplicate the logo and flatten the copy, so you have one clean vector. Keep the original safe.</li>
+  <li>Lower the copy’s opacity, or give it a thin stroke and no fill, then lock it.</li>
+  <li>Draw a line along each important edge: top, bottom, left, right and the main joins. Run it past the logo on both sides.</li>
+  <li>Add lines for the diagonals that repeat. Check that matching angles really match.</li>
+  <li>Press O and hold Shift to draw a circle over each curve that is part of a circle. Match the radius and the centre.</li>
+  <li>Give every line and circle the same thin stroke, in one colour.</li>
+  <li>Group the lines and the circles, and name the groups.</li>
+</ol>
+<p>If a circle almost fits, look closely. Either the curve is meant to be different, which is fine, or it needs a small correction.</p>
+
+<h2>Keep only what explains the logo</h2>
+<p>A construction grid is there to show decisions. If a line doesn’t touch an edge, a centre or a curve, take it out.</p>
+<ul>
+  <li><b>Show repeats.</b> Equal stroke widths, shared angles and circles of the same size.</li>
+  <li><b>Show alignment.</b> Where the mark meets the type, and where edges share a line.</li>
+  <li><b>Stay honest.</b> Don’t add golden ratio circles to a logo that wasn’t drawn with them.</li>
+  <li><b>Trust your eye.</b> Optical corrections break the grid on purpose. Leave them in.</li>
+</ul>
+
+<h2>Draw it with Brandfig</h2>
+<p>Select a vector logo, open the <a href="/logo/">Logo tool in Brandfig</a> and press Draw construction. It draws the lines, circles, anchors and handles from the logo’s paths. Choose Key lines, Balanced or Every line, and turn parts on or off.</p>
+{loop}
+<p>Everything lands as editable layers, and can redraw itself when the logo changes. The same tool lays all seven base grids, so you can sketch on one and draw the construction over the final mark.</p>
+
+<h2>Present the construction</h2>
+<ul>
+  <li><b>One page, one logo.</b> Give it room and keep the caption short.</li>
+  <li><b>Logo first.</b> Show the finished logo before the lines, so people know what they’re looking at.</li>
+  <li><b>Say what it proves.</b> “Five equal blades around one centre” says more than “construction”.</li>
+</ul>
+<p>It fits in a <a href="/concepts/">concept deck</a> to explain the idea, and in the <a href="/guidelines/">brand guidelines</a> as a reference.</p>
+''',
+  'faq': [
+    ('Does every logo need a construction grid?', 'No. It helps when the shape has clear repeats, angles or curves. For an expressive or drawn logo, clear space and minimum size are more useful.'),
+    ('Should I draw the grid before or after the logo?', 'A base grid before, if it helps you sketch. The construction grid after, once the shape is final.'),
+    ('Do logos need to follow the golden ratio?', 'No. It’s one way to test proportion. Use it when it fits the idea, and leave it out when it doesn’t.'),
+    ('Can I make a construction grid from a PNG?', 'Not an accurate one. Draw the logo as a vector first, then build the construction from that.'),
+    ('What colour should construction lines be?', 'One colour that stands apart from the logo, with a thin stroke. Blue, grey or one of the brand’s colours all work.'),
+  ],
 }]
+def guides_index():
+    title = 'Logo and brand design guides for Figma · Brandfig'
+    desc = 'Practical guides for logo and brand designers working in Figma: construction grids, logo files and more.'
+    items = ''.join(f'<a class="card" href="/guides/{g["slug"]}/"><h2>{g["h1"]}</h2><p>{g["desc"]}</p></a>' for g in GUIDES)
+    crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
+        {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'}]}
+    return head(title, desc, '/guides/', ldjson({'@context': 'https://schema.org', '@graph': [crumbs]})) + f'''
+<section class="tool-hero wrap">
+  <h1><span class="eyebrow">Guides</span> Logo and brand design in Figma.</h1>
+</section>
+<section class="guides wrap">{items}</section>
+''' + FOOTER + SCRIPT + TAIL
 def guide(g):
     url = f"{SITE}/guides/{g['slug']}/"
     crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
-        {'@type': 'ListItem', 'position': 2, 'name': g['short'], 'item': url}]}
+        {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'},
+        {'@type': 'ListItem', 'position': 3, 'name': g['short'], 'item': url}]}
     art = {'@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'image': SITE + '/img/og.jpg', 'mainEntityOfPage': url,
            'datePublished': g['published'], 'dateModified': g['modified'],
            'author': {'@type': 'Person', 'name': 'Nilesh Shukla'}, 'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/'}}
     ld = ldjson({'@context': 'https://schema.org', '@graph': [art, crumbs, faq_ld(g['faq'])]})
     return head(g['title'], g['desc'], f"/guides/{g['slug']}/", ld) + f'''
 <article class="article wrap">
-  <h1><span class="eyebrow">Guide</span> {g['h1']}</h1>
+  <a class="eyebrow" href="/guides/">Guides</a>
+  <h1>{g['h1']}</h1>
   <p class="lead">{g['lead']}</p>
-  {g['body'].replace('{loop}', loop('export', 'Export tool at work'))}
+  {g['body'].replace('{loop}', loop(g['tool'], g['tool'].title() + ' tool at work'))}
   <h2>Questions, answered.</h2>
   {faq_html(g['faq'])}
 </article>
@@ -451,13 +540,15 @@ if __name__ == '__main__':
     for t in TOOLS:
         os.makedirs(t[0], exist_ok=True)
         open(f'{t[0]}/index.html', 'w', encoding='utf-8').write(tool(t))
+    os.makedirs('guides', exist_ok=True)
+    open('guides/index.html', 'w', encoding='utf-8').write(guides_index())
     for g in GUIDES:
         os.makedirs(f"guides/{g['slug']}", exist_ok=True)
         open(f"guides/{g['slug']}/index.html", 'w', encoding='utf-8').write(guide(g))
     import datetime
     today = datetime.date.today().isoformat()
     LEGAL_DATE = '2026-10-29'   # last time the legal pages changed
-    urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + [f"/guides/{g['slug']}/" for g in GUIDES] + ['/terms.html', '/privacy.html', '/refund.html']
+    urls = ['/'] + [f'/{t[0]}/' for t in TOOLS] + ['/guides/'] + [f"/guides/{g['slug']}/" for g in GUIDES] + ['/terms.html', '/privacy.html', '/refund.html']
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f'  <url><loc>{SITE}{u}</loc><lastmod>{LEGAL_DATE if u.endswith('.html') else today}</lastmod></url>' for u in urls] + ['</urlset>', '']
     open('sitemap.xml', 'w', encoding='utf-8').write(chr(10).join(sm))

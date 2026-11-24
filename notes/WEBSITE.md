@@ -187,3 +187,6 @@ is untouched until the owner says to ship; nothing committed.
   "Video isn't on a watch page": harmless, don't press Validate Fix.
 - Plan: 5 guides, not a blog (no schedule). Next: logo construction grid; clear space and minimum size; brand guidelines
   checklist; presenting logo concepts. Add a `/guides/` list page and a footer "Guides" link when the second one ships.
+- 2026-11-25: second guide `guides/logo-construction-grid-in-figma/`, list page `guides/`, footer "Guides" link (replaces
+  the direct export-guide link). Each guide's `tool` picks its loop. Left: clear space, guidelines checklist, presenting concepts. Guides is also in the top menu (owner asked
+  for a page listing them all).
