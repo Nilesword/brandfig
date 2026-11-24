@@ -166,7 +166,8 @@ section.block { padding-top: 160px; }
 .guides { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 64px; }
 .guides .card { gap: 16px; }
 .guides .card:hover { background: var(--raised); }
-.guides h2 { font-size: 28px; line-height: 1.15; }
+.block .guides { padding-top: 0; }
+.guides h2, .guides h3 { font-size: 28px; line-height: 1.15; }
 .article .lead { font-size: 20px; margin-top: 28px; max-width: none; color: var(--text); }
 .article h2 { font-size: 32px; margin: 80px 0 20px; }
 .article p, .article li, .article td { font-size: 17px; line-height: 1.6; color: #b4b4ba; }
@@ -179,6 +180,13 @@ section.block { padding-top: 160px; }
 .article th { font-weight: 500; font-size: 15px; color: var(--quiet); padding: 0 20px 10px 0; }
 .article td { padding: 9px 20px 9px 0; vertical-align: top; }
 .article td:first-child { color: var(--text); }
+.article figure { margin: 32px 0; }
+.article figure > img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.article figcaption { font-size: 15px; color: var(--quiet); margin-top: 12px; }
+.article .sizes { display: flex; flex-wrap: wrap; align-items: end; gap: 28px 16px; padding: 40px 32px; background: #fff; border-radius: 12px; }
+.article .sizes span { display: grid; gap: 14px; font-size: 13px; color: #6b6b72; }
+.article .sizes img { display: block; }
+.article pre { font: inherit; font-size: 17px; line-height: 1.6; color: #b4b4ba; margin: 24px 0; overflow-x: auto; }
 .article .faq p { margin-top: 10px; }
 
 /* phone */

@@ -190,3 +190,11 @@ is untouched until the owner says to ship; nothing committed.
 - 2026-11-25: second guide `guides/logo-construction-grid-in-figma/`, list page `guides/`, footer "Guides" link (replaces
   the direct export-guide link). Each guide's `tool` picks its loop. Left: clear space, guidelines checklist, presenting concepts. Guides is also in the top menu (owner asked
   for a page listing them all).
+- 2026-11-25: three more guides: client logo package, clear space and minimum size, brand guidelines checklist. Subjects come
+  from looking at what designers search for (and Akrivi's Learn topics); text is our own, never copied. The export guide's package section
+  moved to the package guide. Next: presenting concepts (2), lockups, logo versions, base grids, file formats, bento. 2 or 3 a week.
+- 2026-11-25: read Akrivi's Learn (12 articles in full, 16 by headings and opening) for how they write. What we took: open with a designer's
+  moment, define the term early, a picture per section (still to do), link related guides ("More guides" at the end). Not their
+  wording, order, examples, figures or pitches. No made-up experience claims.
+- Guide pictures: `img/articles/`, all ET Robotics. Logo versions and colours are cropped from the real Logo pack (lab file 987:104); guideline pages
+  from the film guide (brandfig-video/assets/features/et-guide-4..6); clear-space.svg is drawn with the plugin's drawClearSpace() measurements.

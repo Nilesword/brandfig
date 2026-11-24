@@ -79,7 +79,7 @@ PAGES = {
               ('Keep designing', 'The construction lands as editable layers, and can redraw itself when the logo changes.')],
     'faq': [('How do I make a logo construction grid in Figma?', 'Select the vector logo, open the Logo tool in Brandfig and press Draw construction. It draws lines, circles, anchors and handles from the logo’s paths, and you choose which parts to show.'),
             ('What’s the difference between a base grid and a construction grid?', 'A base grid comes first: it’s what you sketch the logo on. Construction comes after: it shows the lines and circles behind the finished shape. The Logo tool makes both. Read the <a href="/guides/logo-construction-grid-in-figma/">logo construction guide</a>.'),
-            ('How is clear space measured?', 'By the cap height of the type, the width of the mark or a pixel value you set. Minimum sizes for screen and print sit beside it.'),
+            ('How is clear space measured?', 'By the cap height of the type, the width of the mark or a pixel value you set. Minimum sizes for screen and print sit beside it. Read the <a href="/guides/logo-clear-space-and-minimum-size/">clear space guide</a>.'),
             ('Does it work on any logo?', 'It works on vector logos. A PNG or JPG has no paths to measure, so use the vector version.'),
             ('Where does the construction go next?', 'Use it in your <a href="/concepts/">concept deck</a>, your <a href="/guidelines/">brand guidelines</a> or a <a href="/bento/">bento grid</a>.')]},
   'concepts': {
@@ -97,7 +97,7 @@ PAGES = {
     'steps': [('Add brand assets', 'Your logo versions, colours with roles and type roles.'),
               ('Pick a template', 'Twelve designs. Choose the pages you need and put them in order.'),
               ('Build guidelines', 'The guide is laid out in Figma, ready to edit and save as a PDF.')],
-    'faq': [('What should brand guidelines include?', 'The logo and its versions, clear space, minimum sizes, the colour palette, typefaces and how it all comes together. You choose which pages go in and add your own words.'),
+    'faq': [('What should brand guidelines include?', 'The logo and its versions, clear space, minimum sizes, the colour palette, typefaces and how it all comes together. You choose which pages go in and add your own words. Read the <a href="/guides/what-to-include-in-brand-guidelines/">brand guidelines checklist</a>.'),
             ('How do I update the guidelines when the brand changes?', 'Change the asset and build again. Pages you lock stay as you left them.'),
             ('Can I send them as a PDF?', 'Yes. Brandfig saves the guide as one PDF, and can add it to the zip when you <a href="/export/">export the logo files</a>.'),
             ('Are colour values included?', 'Yes: HEX, RGB and CMYK. CMYK is a conversion, so check it with the printer before production.'),
@@ -117,7 +117,7 @@ PAGES = {
               ('Pick the files', 'Choose colour versions, formats and PNG sizes. The panel counts the files for you.'),
               ('Export files', 'Everything is sorted into folders and saved as one zip.')],
     'faq': [('Can I export AI and EPS files from Figma with Brandfig?', 'Yes. AI files are PDF-compatible and open as vectors in Illustrator. EPS files are made from the vector logo. Pictures and angular gradients can’t go in an EPS. Read the <a href="/guides/export-logo-files-from-figma/">logo export guide</a> for every format.'),
-            ('Which logo files should I give a client?', 'Vector files for print and design work (AI, EPS, PDF, SVG) and PNG or JPG for everyday screen use, in colour, reversed, black and white.'),
+            ('Which logo files should I give a client?', 'Vector files for print and design work (AI, EPS, PDF, SVG) and PNG or JPG for everyday screen use, in colour, reversed, black and white. Read the <a href="/guides/client-logo-package/">logo package guide</a>.'),
             ('How will the client know which file to use?', 'Add the Which file to use PDF. It explains each format, size and colour version, the logo rules and where to find every file.'),
             ('Which PNG sizes can I export?', 'Presets from 256 to 4096 px wide, and any custom width.'),
             ('Can the brand guidelines go in the same zip?', 'Yes, as a PDF, along with a font list. Build them first with the <a href="/guidelines/">Guidelines tool</a>.')]},
@@ -409,14 +409,8 @@ GUIDES = [{
   </tbody>
 </table>
 
-<h2>What to put in a client’s logo package</h2>
-<ul>
-  <li><b>Every version.</b> The full logo, the mark and the logotype.</li>
-  <li><b>Every colour it needs.</b> Full colour, reversed, black and white. Grey helps for single-ink jobs.</li>
-  <li><b>Vector and pixel files.</b> AI, EPS, PDF and SVG, with PNG in a few widths.</li>
-  <li><b>Clear names.</b> Brand, version, colour, size: <b>Northwind-Mark-Black-1024px.png</b>.</li>
-  <li><b>A short guide.</b> One page that says which file to use where, next to the <a href="/guidelines/">brand guidelines</a>.</li>
-</ul>
+<h2>Send them to the client</h2>
+<p>Every version, in every colour it needs, as vector and pixel files with clear names. The <a href="/guides/client-logo-package/">client logo package guide</a> has the full list and a folder structure to copy.</p>
 <p>Colour on screen is RGB and print is CMYK, so agree the CMYK values with the printer and ask for a proof before a big run.</p>
 ''',
   'faq': [
@@ -499,11 +493,291 @@ GUIDES = [{
     ('Can I make a construction grid from a PNG?', 'Not an accurate one. Draw the logo as a vector first, then build the construction from that.'),
     ('What colour should construction lines be?', 'One colour that stands apart from the logo, with a thin stroke. Blue, grey or one of the brand’s colours all work.'),
   ],
+}, {
+  'tool': 'export',
+  'slug': 'client-logo-package',
+  'short': 'Client logo package',
+  'title': 'What to include in a client’s logo package · Brandfig',
+  'desc': 'A client logo package checklist: logo versions, colours, file formats, sizes, folder names and the note that tells clients which file to use.',
+  'h1': 'What to include in a client’s logo package',
+  'lead': 'Every logo version, in every colour it needs, as vector and pixel files. Sort them into clear folders and add one page that says which file goes where.',
+  'published': '2026-11-25', 'modified': '2026-11-25',
+  'body': '''
+<p>Two months after handover, the sign maker wants an EPS, the web team wants an SVG, and the client has only kept a JPG from an email. A good package has the answer already in it.</p>
+
+<h2>What a logo package is</h2>
+<p>It’s the folder of finished logo files a client keeps and uses: every version of the logo, in every colour and format it needs. It isn’t the working file, and it isn’t a price tier.</p>
+
+<h2>Logo versions</h2>
+<p>Send the versions the brand will use, and nothing it won’t. Rejected concepts and working files stay with you.</p>
+<table>
+  <thead><tr><th>Version</th><th>Where it’s used</th></tr></thead>
+  <tbody>
+    <tr><td>Full logo, wide</td><td>Website headers, signs, letterheads</td></tr>
+    <tr><td>Full logo, stacked</td><td>Square and tall spaces, packaging</td></tr>
+    <tr><td>Mark</td><td>Profile pictures, app icons, favicons</td></tr>
+    <tr><td>Logotype</td><td>Small heights, and next to a mark that’s already there</td></tr>
+  </tbody>
+</table>
+<figure><img src="/img/articles/logo-versions.webp" width="1520" height="394" alt="ET Robotics full logo, mark and logotype" loading="lazy"><figcaption>Full logo, mark and logotype: ET Robotics</figcaption></figure>
+<p>A logotype with no mark may only need one version, plus a short form for the profile picture.</p>
+
+<h2>Colour versions</h2>
+<ul>
+  <li><b>Colour.</b> The main logo, for white and light backgrounds.</li>
+  <li><b>Reversed.</b> The logo on the brand’s own colour.</li>
+  <li><b>Black.</b> Stamps, engraving, receipts and one-ink print.</li>
+  <li><b>White.</b> Dark backgrounds and dark photos. Warn the client that it looks empty on a white screen.</li>
+  <li><b>Grey.</b> Optional. Partner and sponsor lists often ask for it.</li>
+</ul>
+<figure><img src="/img/articles/logo-colours.webp" width="1520" height="704" alt="ET Robotics logo in colour, two reversed versions, black, white and grey" loading="lazy"><figcaption>Colour, reversed on two brand colours, black, white and grey</figcaption></figure>
+
+<h2>File formats</h2>
+<table>
+  <thead><tr><th>Format</th><th>What it’s for</th></tr></thead>
+  <tbody>
+    <tr><td>SVG</td><td>Websites and apps</td></tr>
+    <tr><td>PNG</td><td>Slides, documents, social media and email, on a transparent background</td></tr>
+    <tr><td>JPG</td><td>Forms and older apps that don’t take transparency</td></tr>
+    <tr><td>PDF</td><td>Print shops, and sharing with anyone</td></tr>
+    <tr><td>EPS</td><td>Signs, embroidery, vinyl and older software</td></tr>
+    <tr><td>AI</td><td>The client’s next designer</td></tr>
+  </tbody>
+</table>
+<p>PNG widths of 512, 1024 and 2048 px cover most jobs. For a favicon, add the mark at 16, 32 and 48 px, and simplify it if it fills in. Social networks often crop profile pictures to a circle, so centre the mark and leave room around it.</p>
+<p>If the client prints often, agree CMYK values and spot colours with the printer, and keep those print files in a folder of their own. Figma doesn’t export AI or EPS, so see <a href="/guides/export-logo-files-from-figma/">how to export logo files from Figma</a>.</p>
+
+<h2>Folders and file names</h2>
+<p>Sort by version, then by format. A client looks for the mark first and the file type second.</p>
+<pre>Northwind
+      Which file to use.pdf
+      Northwind Brand guidelines.pdf
+      Fonts.txt
+      Mark
+            SVG
+            PNG
+            JPG
+            PDF
+            EPS
+            AI
+      Full logo
+            …</pre>
+<p>Name every file in the same order: brand, version, colour, size. <b>Northwind-Mark-Black-1024px.png</b> still makes sense after someone emails it on its own. Avoid “final”, dates and initials.</p>
+
+<h2>The page that says which file to use</h2>
+<p>Clients rarely know the difference between EPS and SVG, and they shouldn’t have to. One page answers it:</p>
+<ul>
+  <li><b>Jobs, not formats.</b> “Print shop: PDF” is easier to use than “PDF: print”.</li>
+  <li><b>A few rules.</b> Scale evenly, keep the colours, leave clear space.</li>
+  <li><b>Smallest sizes.</b> For screen and for print. Here’s <a href="/guides/logo-clear-space-and-minimum-size/">how to set them</a>.</li>
+  <li><b>Brand colours.</b> HEX, RGB and CMYK values they can copy.</li>
+</ul>
+
+<h2>Guidelines and fonts</h2>
+<p>Add the <a href="/guides/what-to-include-in-brand-guidelines/">brand guidelines</a> as a PDF. List the fonts with a link to each one. Don’t pass on font files unless the licence allows it.</p>
+
+<h2>Make the package in Figma</h2>
+<p>Add the logo versions to the <a href="/export/">Export tool in Brandfig</a>, then pick colours, formats and PNG sizes. It saves one zip, with a folder for each version. The guidelines, font list and Which file to use PDF can go in the same zip.</p>
+{loop}
+
+<h2>Before you send it</h2>
+<ol>
+  <li>Open one file of each format.</li>
+  <li>Place a PNG on a dark slide to check its background is transparent.</li>
+  <li>Open an SVG in a browser and zoom in on the edges.</li>
+  <li>Check that the type is outlined, so nothing asks for a font.</li>
+  <li>Download the zip from your own link and open it the way the client will.</li>
+</ol>
+''',
+  'faq': [
+    ('How many files should a logo package have?', 'As many as the brand needs. Three versions in four colours and six formats is already 72 files, before extra PNG sizes, so clear folders matter more than the count.'),
+    ('Should I send the client an AI file?', 'If your agreement includes it, yes. It gives their next designer a clean vector to work from.'),
+    ('Should I send the working Figma file?', 'Only if it’s part of the agreement. The logo package works without it.'),
+    ('Do clients need both RGB and CMYK files?', 'RGB for anything on screen. CMYK when they print often. Confirm the values with the printer and ask for a proof.'),
+    ('Can I include the fonts?', 'Only when the licence allows sharing. Otherwise, send the font names and where to get them.'),
+  ],
+}, {
+  'tool': 'logo',
+  'slug': 'logo-clear-space-and-minimum-size',
+  'short': 'Logo clear space and minimum size',
+  'title': 'Logo clear space and minimum size, in Figma · Brandfig',
+  'desc': 'Set logo clear space with a unit from the logo, find its minimum size for screen and print, and mark both in Figma.',
+  'h1': 'How to set logo clear space and minimum size in Figma',
+  'lead': 'Take a unit from the logo, such as its cap height, and keep that much space on every side. For minimum size, make the logo smaller until a detail fails, then go back up.',
+  'published': '2026-11-25', 'modified': '2026-11-25',
+  'body': '''
+<p>You hand over a logo, and the next time you see it there’s a web address pushed against its edge. Or it’s on a pen, with the type filled in. Two small rules prevent most of that.</p>
+
+<h2>What clear space is</h2>
+<p>Clear space is the empty area around a logo. Text, other logos, busy photo details and the page edge stay out of it. It’s a minimum, so more room is always fine. You’ll also see it called an exclusion zone or a safe area.</p>
+
+<h2>Pick a unit from the logo</h2>
+<p>Use a part of the logo as the unit, not a fixed number. It then scales with the logo, on a business card or on a billboard.</p>
+<table>
+  <thead><tr><th>Unit</th><th>Good for</th></tr></thead>
+  <tbody>
+    <tr><td>Cap height</td><td>Logotypes, and logos with a mark and type</td></tr>
+    <tr><td>Width of the mark</td><td>Compact marks. Often a half or a quarter of it</td></tr>
+    <tr><td>Part of the logo’s height</td><td>Logos with nothing obvious to measure. Try a half or a quarter</td></tr>
+    <tr><td>One part of the mark</td><td>A dot, a blade or a stroke people can spot</td></tr>
+    <tr><td>Pixels</td><td>One fixed size only, such as an app header</td></tr>
+  </tbody>
+</table>
+<p>One cap height on every side is a good place to start. Compare it with half and with two. Too little and the logo feels crowded. Too much and nobody follows the rule.</p>
+
+<h2>Mark clear space in Figma</h2>
+<ol>
+  <li>Duplicate the logo and work on the copy.</li>
+  <li>Draw a square as tall as a flat capital in the logotype, such as H or E. This is your unit. Round letters overshoot, so don’t measure those.</li>
+  <li>Place a copy of the square on each side, touching the outermost edge of the logo.</li>
+  <li>Draw a rectangle around the outside of the squares. That’s the clear space.</li>
+  <li>Give the area a light, flat fill and send it behind the logo.</li>
+  <li>Label the unit, such as “x = cap height”.</li>
+  <li>Group the marks and name the group Clear space.</li>
+</ol>
+<figure><img src="/img/articles/clear-space.svg" width="1079" height="476" alt="Clear space of one cap height around the ET Robotics logo" loading="lazy"><figcaption>Clear space of one cap height. The squares show the unit.</figcaption></figure>
+<p>Measure from the shape you can see. If the frame around the logo has padding, the space will come out too big.</p>
+
+<h2>Find the minimum size</h2>
+<p>Minimum size is the smallest the logo can go before it stops being clear. Test it instead of guessing.</p>
+<ol>
+  <li>Place the logo at 200, 120, 80, 60 and 40 px wide.</li>
+  <li>View them at 100% zoom on a normal screen and on a phone.</li>
+  <li>Find the first one where a gap closes, a thin stroke fades or a word is hard to read.</li>
+  <li>Set the minimum one step above it.</li>
+  <li>Print the same row at real size in millimetres, and repeat.</li>
+</ol>
+<figure><div class="sizes"><span><img src="/img/articles/et-logo.svg" width="200" height="33" alt="ET Robotics logo, 200 px wide">200</span><span><img src="/img/articles/et-logo.svg" width="120" height="20" alt="ET Robotics logo, 120 px wide">120</span><span><img src="/img/articles/et-logo.svg" width="80" height="13" alt="ET Robotics logo, 80 px wide">80</span><span><img src="/img/articles/et-logo.svg" width="60" height="10" alt="ET Robotics logo, 60 px wide">60</span><span><img src="/img/articles/et-logo.svg" width="40" height="7" alt="ET Robotics logo, 40 px wide">40</span></div><figcaption>The ET Robotics logo at each width, in px. The type goes before the mark does.</figcaption></figure>
+<ul>
+  <li><b>Screen and print are separate.</b> Give pixels for screen and millimetres for print.</li>
+  <li><b>Each version has its own limit.</b> The mark can usually go smaller than the full logo.</li>
+  <li><b>Say what to measure.</b> Write “24 px wide” or “24 px high”, not just 24 px.</li>
+  <li><b>Plan what comes next.</b> Below the minimum, switch to the mark or a simpler version.</li>
+  <li><b>Ask about the material.</b> Embroidery, engraving and vinyl have their own limits, so check with whoever makes it.</li>
+</ul>
+
+<h2>Mark it with Brandfig</h2>
+<p>Open Clear space in the <a href="/logo/">Logo tool in Brandfig</a>. Choose cap height, mark width or your own pixel value, set how much goes around the logo, and press Mark clear space. You can show the unit marker, the measurements and a shaded zone. Apply it to the selected layers or to all the brand’s logos.</p>
+<p>Enter the screen and print minimums you tested in the same place. Clear space can become a page in the <a href="/guidelines/">brand guidelines</a>, and the sizes appear on the Minimum size page.</p>
+
+<h2>Write the rule</h2>
+<p>Keep it to two lines a client can follow:</p>
+<ul>
+  <li>Keep one cap height clear on every side of the logo.</li>
+  <li>Don’t use the full logo below 80 px wide on screen or 20 mm wide in print.</li>
+</ul>
+<p>Use your own tested numbers. These only show the wording.</p>
+''',
+  'faq': [
+    ('How much clear space should a logo have?', 'One cap height, or a quarter to a half of the mark’s width, is a common starting point. Test it on real pages and adjust.'),
+    ('What is the minimum size for a logo?', 'There’s no standard number. It depends on the thinnest stroke, the smallest gap and the type, so test each version on screen and on paper.'),
+    ('Is clear space the same on every side?', 'Usually, because it’s easier to follow. A logo with an uneven shape can have different space per side if the rule stays clear.'),
+    ('What is x in a clear space diagram?', 'The unit, taken from part of the logo. 2x means twice that part.'),
+    ('Does clear space apply to favicons and app icons?', 'Not in the same way. They have very little room, so set their padding separately.'),
+  ],
+}, {
+  'tool': 'guidelines',
+  'slug': 'what-to-include-in-brand-guidelines',
+  'short': 'What to include in brand guidelines',
+  'title': 'What to include in brand guidelines: a checklist · Brandfig',
+  'desc': 'A brand guidelines checklist: logo, colour, type, imagery and examples. What each page should say, and what a small brand can skip.',
+  'h1': 'What to include in brand guidelines: a checklist',
+  'lead': 'Cover the logo, colour and type, then show them working together. Add voice, photography and layouts when the brand has them.',
+  'published': '2026-11-25', 'modified': '2026-11-25',
+  'body': '''
+<p>A new marketing hire opens the file on their first day. They want to know which logo to use, which blue is right and which font goes in a headline. Good guidelines answer those in a minute, without a call to you.</p>
+
+<h2>The pages every brand needs</h2>
+<table>
+  <thead><tr><th>Page</th><th>What it answers</th></tr></thead>
+  <tbody>
+    <tr><td>Logo and versions</td><td>Which logo do I use here?</td></tr>
+    <tr><td>Clear space and minimum size</td><td>How close and how small can it go?</td></tr>
+    <tr><td>Logo on backgrounds</td><td>Which version works on this colour?</td></tr>
+    <tr><td>Logo misuse</td><td>What should I never do to it?</td></tr>
+    <tr><td>Colour palette</td><td>What are the exact values?</td></tr>
+    <tr><td>Typefaces and hierarchy</td><td>Which font, weight and size?</td></tr>
+    <tr><td>Examples</td><td>What does it look like together?</td></tr>
+    <tr><td>Files and contact</td><td>Where are the files, and who do I ask?</td></tr>
+  </tbody>
+</table>
+
+<h2>Logo</h2>
+<ul>
+  <li><b>Show each version large.</b> Say when to use it in one line.</li>
+  <li><b>Set the space.</b> Give <a href="/guides/logo-clear-space-and-minimum-size/">clear space and minimum sizes</a> for screen and print.</li>
+  <li><b>Show it on real backgrounds.</b> White, dark and the brand’s colours.</li>
+  <li><b>Keep misuse short.</b> Six likely mistakes are more useful than twenty unlikely ones.</li>
+  <li><b>Show construction if it explains something.</b> Here’s <a href="/guides/logo-construction-grid-in-figma/">how to draw a construction grid</a>.</li>
+</ul>
+
+<h2>Colour</h2>
+<ul>
+  <li><b>Give every colour a role.</b> Primary, secondary, accent, neutral.</li>
+  <li><b>List the values.</b> HEX, RGB and CMYK. Add a spot colour if the brand prints often.</li>
+  <li><b>Show the amounts.</b> A palette with one dominant colour looks different from one with five equal ones.</li>
+  <li><b>Show text pairs that are easy to read.</b> Check the contrast. WCAG AA asks for 4.5 to 1 for normal text and 3 to 1 for large text.</li>
+</ul>
+<figure><img src="/img/articles/guideline-palette.webp" width="960" height="540" alt="Colour palette page from the ET Robotics guidelines" loading="lazy"><figcaption>Colour palette page, made with Brandfig for ET Robotics</figcaption></figure>
+
+<h2>Type</h2>
+<ul>
+  <li><b>Name the fonts and weights.</b> Say where to get them.</li>
+  <li><b>Set roles.</b> Headline, subhead, body and caption, with size and line height.</li>
+  <li><b>Pick a fallback.</b> For email and slides, where the brand font may not load.</li>
+</ul>
+<figure><img src="/img/articles/guideline-typefaces.webp" width="960" height="540" alt="Typefaces page from the ET Robotics guidelines" loading="lazy"><figcaption>Typefaces page from the same guide</figcaption></figure>
+
+<h2>Add these when the brand has them</h2>
+<ul>
+  <li><b>Purpose and values.</b> Short, and in the client’s own words.</li>
+  <li><b>Voice.</b> A few traits, with a line written the right way and the wrong way.</li>
+  <li><b>Photography.</b> Subject, light and crop, with pictures to follow and to avoid.</li>
+  <li><b>Pattern, icons and shapes.</b> How they’re made and where they go.</li>
+  <li><b>Stationery, social, packaging, website.</b> Only what the brand will really use.</li>
+  <li><b>Motion.</b> If the logo or the type moves.</li>
+</ul>
+<figure><img src="/img/articles/guideline-app-icons.webp" width="960" height="540" alt="App icons page from the ET Robotics guidelines" loading="lazy"><figcaption>App icons page, built from the mark</figcaption></figure>
+
+<h2>How long should it be?</h2>
+<table>
+  <thead><tr><th>Brand</th><th>Length</th><th>Cover</th></tr></thead>
+  <tbody>
+    <tr><td>New or very small</td><td>One page</td><td>Logo, colours, type</td></tr>
+    <tr><td>Small business</td><td>10 to 20 pages</td><td>The pages every brand needs</td></tr>
+    <tr><td>Growing team</td><td>20 to 40 pages</td><td>Plus voice, imagery and layouts</td></tr>
+    <tr><td>Several teams or markets</td><td>40 or more</td><td>Plus each channel and product</td></tr>
+  </tbody>
+</table>
+<p>These are starting points. Leave a page out when it has nothing useful to say.</p>
+
+<h2>Write rules people can follow</h2>
+<ul>
+  <li><b>Say what to do first.</b> “Use the white logo on photos” is easier to follow than a list of bans.</li>
+  <li><b>One idea per page.</b> A short line and a clear picture.</li>
+  <li><b>Give the reason when it isn’t obvious.</b> People keep rules they understand.</li>
+  <li><b>Add a date.</b> So everyone knows which version they have.</li>
+</ul>
+
+<h2>Build them in Figma</h2>
+<p>The <a href="/guidelines/">Guidelines tool in Brandfig</a> has pages for the logo, colour, type, graphic elements, photography and applications, in twelve templates. Add your logos, colours and type, choose the pages, and build. There’s also a one-pager.</p>
+{loop}
+<p>Everything is editable in Figma. Purpose, values and voice come with placeholder text to rewrite, and photo and mockup pages have empty areas for your own work. Save the result as a PDF, or put it in the <a href="/guides/client-logo-package/">client’s logo package</a>.</p>
+''',
+  'faq': [
+    ('What is the most important part of brand guidelines?', 'The logo, colour and type pages. They answer the questions people ask most often.'),
+    ('Does a small business need brand guidelines?', 'Yes, but a short set. One page with the logo, colours and type is enough to start.'),
+    ('What’s the difference between a brand book and brand guidelines?', 'People use the terms for the same thing. When there’s a difference, a brand book covers the story and values, and guidelines cover how to use the design.'),
+    ('Should brand guidelines be a PDF or a website?', 'A PDF is easy to send and keep. A website suits a large team that updates often. Many brands begin with a PDF.'),
+    ('How often should brand guidelines be updated?', 'Whenever the logo, colours or type change, or when people keep asking the same question.'),
+  ],
 }]
+def guide_card(g, tag='h2'):
+    return f'<a class="card" href="/guides/{g["slug"]}/"><{tag}>{g["h1"]}</{tag}><p>{g["desc"]}</p></a>'
 def guides_index():
     title = 'Logo and brand design guides for Figma · Brandfig'
-    desc = 'Practical guides for logo and brand designers working in Figma: construction grids, logo files and more.'
-    items = ''.join(f'<a class="card" href="/guides/{g["slug"]}/"><h2>{g["h1"]}</h2><p>{g["desc"]}</p></a>' for g in GUIDES)
+    desc = 'Practical guides for logo and brand designers working in Figma: construction grids, clear space, brand guidelines and logo files.'
+    items = ''.join(guide_card(g) for g in GUIDES)
     crumbs = {'@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
         {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'}]}
@@ -519,6 +793,8 @@ def guide(g):
         {'@type': 'ListItem', 'position': 1, 'name': 'Brandfig', 'item': SITE + '/'},
         {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides/'},
         {'@type': 'ListItem', 'position': 3, 'name': g['short'], 'item': url}]}
+    # two others: the same tool first
+    more = ''.join(guide_card(o, 'h3') for o in sorted((o for o in GUIDES if o is not g), key=lambda o: o['tool'] != g['tool'])[:2])
     art = {'@type': 'Article', 'headline': g['h1'], 'description': g['desc'], 'image': SITE + '/img/og.jpg', 'mainEntityOfPage': url,
            'datePublished': g['published'], 'dateModified': g['modified'],
            'author': {'@type': 'Person', 'name': 'Nilesh Shukla'}, 'publisher': {'@type': 'Organization', 'name': 'Brandfig', 'url': SITE + '/'}}
@@ -532,6 +808,10 @@ def guide(g):
   <h2>Questions, answered.</h2>
   {faq_html(g['faq'])}
 </article>
+<section class="block wrap">
+  <div class="head"><h2>More guides</h2></div>
+  <div class="guides">{more}</div>
+</section>
 ''' + FOOTER + SCRIPT + TAIL
 
 if __name__ == '__main__':
